@@ -1,0 +1,46 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 05/12/2022 10:02:55 PM
+// Design Name: 
+// Module Name: Decoder
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module Decoder(
+    input [3:0]a,
+    output [11:0]o
+    );
+    
+    reg [15:0]o;
+    always@*
+    begin
+    case (a)
+      4'b0000: o=12'b000000000001;
+      4'b0001: o=12'b000000000010;
+      4'b0010: o=12'b000000000100;
+      4'b0011: o=12'b000000001000;
+      4'b0100: o=12'b000000010000;
+      4'b0101: o=12'b000000100000;
+      4'b0110: o=12'b000001000000;
+      4'b0111: o=12'b000010000000;
+      4'b1000: o=12'b000100000000;
+      4'b1001: o=12'b001000000000;
+      4'b1010: o=12'b010000000000;
+      4'b1011: o=12'b100000000000;
+    endcase
+    end
+endmodule
