@@ -45,11 +45,11 @@ end
 always@(posedge clk)
 	begin
 		case(state)
-			h'00:begin
+			'h00:begin
 				reset <=0;
 				state <= state +1;
 				end
-			h'01:begin
+			'h01:begin
 				en_decAop <=1;
 				en_decAout <= 1;
 				alu_ctrl <= 4'b0000;
@@ -57,7 +57,7 @@ always@(posedge clk)
 				en_decCout <=1;
 				state <= state +1;
 				end 	
-			h'02:begin
+			'h02:begin
 				pc_inc <=1;
 				imem_read <=1;
 				en_decAop <=0;
@@ -66,14 +66,43 @@ always@(posedge clk)
 				en_decCout <=0;
 				state <= state + 1;
 				end
-			h'03:begin
+			'h03:begin
 				pc_inc <= 0;
+				imem_read <= 0;
 				state <= state + 1;
+				//state <= opcode;
 				end
-			h'04:begin
-				
+			'h04:begin
+				case(opcode)
+				    'h00:state<=0;
+				    'h01:state<=1;
+				    'h02:state<=5;
+				    endcase
 				end
+			'h05:begin
+			     en_decAop <= 1;
+			     en_decCop <= 1;
+			     state <= state + 1;
+			     end
+			 'h06:begin
+			     en_decAop <= 0;
+			     en_decCop <= 1;
+			     imem_read <= 1;
+			     state <= state + 1;
+			     end
+			     
+			 'h07:begin
+			     en_decAout <= 1;
+			     en_decCout <= 1;
+			     alu_ctrl  <= 4'b0000;
+			     imem_read <=0;
+			     state <= state + 1;
+			     end
+			 'h08:begin
+			     pc_inc <= 1;
+			     state <= 1;
+			     end
 		endcase	
 	end	
-end
+endmodule
 
