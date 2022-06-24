@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/menuw/Documents/Processor-Design/hdl/cu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cu
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sim_1/new/sim1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim1

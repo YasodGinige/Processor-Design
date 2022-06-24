@@ -76,7 +76,7 @@ always@(posedge clk)
 				case(opcode)
 				    'h00:state<=0;
 				    'h01:state<=1;
-				    'h02:state<=5;
+				    'h02:state<=7;
 				    endcase
 				end
 			'h05:begin
@@ -102,6 +102,92 @@ always@(posedge clk)
 			     pc_inc <= 1;
 			     state <= 1;
 			     end
+			 'h09:begin
+			     dmem_read <=1;
+			     state <= state +1;
+			     end
+			 'h0a:begin
+			     dmem_read <=0;
+			     state <=1;
+			     end
+			 'h0b:state <= state +1;
+			 'h0c:begin
+			     alu_ctrl <= 4'b0011;
+			     state <= state +1;
+			     end
+			 'h0d:begin
+			     alu_ctrl  <= 0;
+			     state <= 1;
+			     end
+			 'h0e:state <= state + 1;
+			 'h0f:begin
+			     alu_ctrl <= 4'b0100;
+			     state <= state +1;
+			     end
+			 'h10:begin
+			     alu_ctrl  <= 0;
+			     state <= 1;
+			     end
+			 'h11:state <= state +1;
+			 'h12:begin
+			     alu_ctrl <= 4'b0101;
+			     state <= state +1;
+			     end
+			 'h13:begin
+			     alu_ctrl <=0;
+			     state <= 1;
+			     end
+			 'h14:state <= state +1;
+			 'h15:begin
+			     alu_ctrl <= 4'b0001;
+			     state <= state + 1;
+			     end
+			 'h16:begin
+			     alu_ctrl  <= 0;
+			     state <= 1;
+			     end
+			 'h17:state <= state + 1;  //SUB
+			 'h18:begin
+			     alu_ctrl <= 4'b0010;
+			     state <= state + 1;
+			     end
+			 'h19:begin
+			     alu_ctrl <= 0;
+			     state <= 1;
+			     end
+			 'h1a:begin          //STORE
+			     dmem_write <= 1;
+			     state <= state + 1;
+			     end
+			 'h1b:begin
+			     dmem_write <= 0;
+			     state <= 1;
+			     end
+			 'h1c:state <= state + 1; //MOVE
+			 'h1d:begin
+			     alu_ctrl <= 4'b0000;
+			     state <= state + 1;
+			     end
+			 'h1e:begin
+			     state <= 1;
+			     end
+			 'h1f:begin          //JUMPNZ
+			     jump <= 1;
+			     state <= state + 1;
+			     end
+			 'h20:begin
+			     en_decAop <= 0;
+			     en_decBop <= 0;
+			     imem_read  <= 1;
+			     state <= state + 1;
+			     end
+			 'h21:state <= state + 1;
+			 'h22:begin                  //FETCH OR NOT??
+			     alu_ctrl <= 4'b0010;
+			     state <= state + 1;
+			     end
+			 'h23:state <= 1;
+			 
 		endcase	
 	end	
 endmodule
