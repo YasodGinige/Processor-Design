@@ -1,18 +1,19 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"1.08819",
-   "Default View_TopLeft":"-54,-207",
+   "Default View_TopLeft":"178,-210",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace inst data_ram_0 -pg 1 -lvl 1 -x 100 -y -40 -defaultsOSRD
-preplace inst alu_16bit_0 -pg 1 -lvl 4 -x 1090 -y 140 -defaultsOSRD
-preplace inst pc_project_demo_0 -pg 1 -lvl 3 -x 820 -y 320 -defaultsOSRD
-preplace inst cu_0 -pg 1 -lvl 3 -x 820 -y -10 -defaultsOSRD
-preplace inst ir_module_0 -pg 1 -lvl 2 -x 370 -y 310 -defaultsOSRD
-preplace inst R1_0 -pg 1 -lvl 2 -x 370 -y 0 -defaultsOSRD
-levelinfo -pg 1 -220 100 370 820 1090 1230
-pagesize -pg 1 -db -bbox -sgen -220 -270 1230 490
+preplace inst data_ram_0 -pg 1 -lvl 1 -x 50 -y -40 -defaultsOSRD
+preplace inst alu_16bit_0 -pg 1 -lvl 5 -x 1120 -y 210 -defaultsOSRD
+preplace inst pc_project_demo_0 -pg 1 -lvl 4 -x 850 -y -110 -defaultsOSRD
+preplace inst cu_0 -pg 1 -lvl 3 -x 510 -y 70 -defaultsOSRD
+preplace inst ir_module_0 -pg 1 -lvl 2 -x 280 -y 310 -defaultsOSRD
+preplace inst R1_0 -pg 1 -lvl 2 -x 280 -y 0 -defaultsOSRD
+preplace netloc pc_project_demo_0_PCResult 1 4 1 980 -110n
+levelinfo -pg 1 -220 50 280 510 850 1120 1260
+pagesize -pg 1 -db -bbox -sgen -220 -270 1260 490
 "
 }
-
+0

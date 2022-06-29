@@ -305,6 +305,14 @@
           }
         }
       }
+    },
+    "nets": {
+      "pc_project_demo_0_PCResult": {
+        "ports": [
+          "pc_project_demo_0/PCResult",
+          "alu_16bit_0/operand1"
+        ]
+      }
     }
   }
 }
