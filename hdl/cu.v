@@ -50,7 +50,7 @@ always@(posedge clk)
 				state <= state +1;
 				end
 			'h01:begin
-				en_decAop <=1;
+				en_decAop <= 1;
 				en_decAout <= 1;
 				alu_ctrl <= 4'b0000;
 				en_decCop <= 1;
