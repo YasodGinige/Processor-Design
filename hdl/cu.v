@@ -18,6 +18,7 @@ module cu #(parameter BUS_WIDTH =16,
 	output reg dmem_write,
 	output reg imem_read,
 	output reg pc_inc,
+	output reg mar_inc,
 	output reg jump
 );
 reg [OPCODE_LEN-1:0] opcode;

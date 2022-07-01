@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.16629",
-   "Default View_TopLeft":"-138,-941",
+   "Default View_ScaleFactor":"0.272046",
+   "Default View_TopLeft":"-1897,-1276",
    "ExpandedHierarchyInLayout":"",
    "PinnedBlocks":"/data_ram_0|/alu_16bit_0|/cu_0|/mux_0|/mux_1|/data_ram_1|/R1_0|/R1_1|/ir_module_0|/pc_project_demo_1|/R1_2|/R1_3|/R1_4|/R1_5|/R1_6|/R1_7|/R1_8|/R1_9|",
    "comment_0":"STR_POINTER",
@@ -47,18 +47,15 @@ preplace inst R1_6 -pg 1 -lvl 3 -x 790 -y 830 -defaultsOSRD
 preplace inst R1_7 -pg 1 -lvl 3 -x 790 -y 990 -defaultsOSRD
 preplace inst R1_8 -pg 1 -lvl 3 -x 790 -y 1150 -defaultsOSRD
 preplace inst R1_9 -pg 1 -lvl 3 -x 790 -y 1310 -defaultsOSRD
-preplace inst cu_0 -pg 1 -lvl 4 -x 1380 -y -730 -defaultsOSRD -orient R180
 preplace inst mux_0 -pg 1 -lvl 4 -x 1380 -y -170 -defaultsOSRD
 preplace inst mux_1 -pg 1 -lvl 4 -x 1380 -y 430 -defaultsOSRD
 preplace inst ir_module_0 -pg 1 -lvl 3 -x 790 -y -570 -defaultsOSRD
-preplace inst clk_wiz_3 -pg 1 -lvl 2 -x 360 -y -230 -defaultsOSRD
-preplace inst clk_wiz_9 -pg 1 -lvl 1 -x 20 -y -30 -defaultsOSRD
-preplace inst clk_wiz_10 -pg 1 -lvl 1 -x 20 -y -150 -defaultsOSRD
+preplace inst cu_0 -pg 1 -lvl 4 -x 1380 -y -730 -defaultsOSRD -orient R180
 preplace netloc R1_0_A 1 3 1 1070 -980n
 preplace netloc R1_0_B 1 3 1 1040 -960n
-preplace netloc R1_1_A 1 1 3 160 -490 510 -470 1010
+preplace netloc R1_1_A 1 1 3 140 -470 N -470 1010
 preplace netloc R1_1_B 1 3 1 960 -370n
-preplace netloc R1_2_A 1 1 3 180 -460 490J -290 970
+preplace netloc R1_2_A 1 1 3 150 -270 NJ -270 970
 preplace netloc R1_2_B 1 3 1 940 -170n
 preplace netloc R1_3_A 1 3 1 920 -130n
 preplace netloc R1_3_B 1 3 1 920 180n
@@ -77,19 +74,16 @@ preplace netloc R1_9_B 1 3 1 1120 590n
 preplace netloc data_ram_0_dout 1 1 1 N -690
 preplace netloc ir_module_0_A 1 3 1 1060 -610n
 preplace netloc ir_module_0_B 1 3 1 980 -590n
-preplace netloc pc_project_demo_1_PCResult 1 0 4 -750 -600 N -600 510 -670 1020
-preplace netloc cu_0_en_decAop 1 3 1 1120 -630n
-preplace netloc cu_0_en_decBop 1 3 1 1100 -650n
-preplace netloc cu_0_en_decAout 1 3 1 1110 -690n
-preplace netloc cu_0_en_decBout 1 3 1 1080 -710n
+preplace netloc pc_project_demo_1_PCResult 1 0 4 -750 -600 N -600 480 -670 1020
+preplace netloc cu_0_en_decAop 1 3 1 1120 -620n
+preplace netloc cu_0_en_decBop 1 3 1 1100 -640n
+preplace netloc cu_0_en_decAout 1 3 1 1110 -680n
+preplace netloc cu_0_en_decBout 1 3 1 1080 -700n
 preplace netloc ir_module_0_addrA 1 3 1 1050 -570n
 preplace netloc ir_module_0_addrB 1 3 1 1000 -550n
 preplace netloc mux_0_out 1 4 1 1510 -170n
 preplace netloc mux_1_out 1 4 1 1510 20n
 preplace netloc cu_0_alu_ctrl 1 3 2 1090 50 1520
-preplace netloc clk_wiz_3_clk_out1 1 1 2 170 -470 480
-preplace netloc clk_wiz_9_clk_out1 1 1 2 150 -480 500J
-preplace netloc clk_wiz_10_clk_out1 1 1 2 140 140 NJ
 preplace cgraphic comment_3 place top -76 -12 textcolor 4 linecolor 3 linewidth 2
 preplace cgraphic comment_2 place top 709 539 textcolor 4 linecolor 3 linewidth 2
 preplace cgraphic comment_1 place top 689 348 textcolor 4 linecolor 3 linewidth 2
@@ -115,7 +109,7 @@ pagesize -pg 1 -db -bbox -sgen -770 -1200 1870 1570
    "textcolor_comment_4":""
 }
 {
-   "da_clkrst_cnt":"17"
+   "da_clkrst_cnt":"18"
 }
 {
    "/R1_1/comment_3":"comment_3",

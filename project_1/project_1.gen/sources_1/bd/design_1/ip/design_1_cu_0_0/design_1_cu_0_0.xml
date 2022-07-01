@@ -306,6 +306,18 @@
         </spirit:wire>
       </spirit:port>
       <spirit:port>
+        <spirit:name>mar_inc</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>reg</spirit:typeName>
+              <spirit:viewNameRef>dummy_view</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
         <spirit:name>jump</spirit:name>
         <spirit:wire>
           <spirit:direction>out</spirit:direction>

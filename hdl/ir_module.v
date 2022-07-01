@@ -24,9 +24,9 @@ module ir_module(din, clk, rst, writeC, A, B,addrA, addrB, addrC);
 input       [15:0] din;
 input       rst, clk, writeC;
 
-output reg [3:0] addrA;
-output reg [3:0] addrB;
-output reg [3:0] addrC;
+output [3:0] addrA;
+output [3:0] addrB;
+output [3:0] addrC;
 output reg [3:0] opcode;
 output reg  [15:0] A;
 output reg  [15:0] B;
