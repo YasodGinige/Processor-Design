@@ -19,6 +19,9 @@ module cu #(parameter BUS_WIDTH =16,
 	output reg imem_read,
 	output reg pc_inc,
 	output reg mar_inc,
+	output reg col_zero,
+	output reg col_inc,
+	output reg row_inc,
 	output reg jump
 );
 reg [OPCODE_LEN-1:0] opcode;
@@ -174,6 +177,8 @@ always@(posedge clk)
 			     end
 			 'h1f:begin          //JUMPNZ
 			     jump <= 1;
+			     en_decAop <= 1;
+			     en_decBop <= 1;     //Now addresses are saved in mux
 			     state <= state + 1;
 			     end
 			 'h20:begin
@@ -182,13 +187,60 @@ always@(posedge clk)
 			     imem_read  <= 1;
 			     state <= state + 1;
 			     end
-			 'h21:state <= state + 1;
-			 'h22:begin                  //FETCH OR NOT??
+			 'h21:begin
+			     en_decAout <=1;
+			     en_decBout <=1;
 			     alu_ctrl <= 4'b0010;
 			     state <= state + 1;
 			     end
+			 'h22:state <= state + 1;
+			 /*'h22:begin                  //FETCH OR NOT??
+			     alu_ctrl <= 4'b0010;
+			     state <= state + 1;
+			     end*/
 			 'h23:state <= 1;
+			 ///////////////////////////
+			 //MAR INCREMENT
+			 'h99:begin
+			     mar_inc <=1;
+			     state <= state + 1;
+			     end
+			 'h100:begin
+			     mar_inc <= 0;
+			     state <= 1;
+			 end
 			 
+			 //COL INCREMENT
+			 'h100:begin
+			     col_inc <=1;
+			     state <= state + 1;
+			     end
+			 'h101:begin
+			     col_inc <= 0;
+			     state <= 1;
+			 end
+			 
+			 //ROW INCREMENT
+			 'h102:begin
+			     row_inc <=1;
+			     state <= state + 1;
+			     end
+			 'h103:begin
+			     row_inc <= 0;
+			     state <= 1;
+			 end
+			 
+			 //COL ZERO
+			 'h104:begin
+			     col_zero <=1;
+			     state <= state + 1;
+			     end
+			 'h105:begin
+			     col_zero <= 0;
+			     state <= 1;
+			 end
+			 
+			 //////////////////////////
 		endcase	
 	end	
 endmodule

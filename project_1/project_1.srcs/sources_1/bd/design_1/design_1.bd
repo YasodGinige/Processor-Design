@@ -14,7 +14,6 @@
       "alu_16bit_0": "",
       "data_ram_1": "",
       "R1_0": "",
-      "R1_1": "",
       "pc_project_demo_1": "",
       "R1_2": "",
       "R1_3": "",
@@ -27,7 +26,8 @@
       "mux_0": "",
       "mux_1": "",
       "ir_module_0": "",
-      "cu_0": ""
+      "cu_0": "",
+      "MAR_0": ""
     },
     "components": {
       "data_ram_0": {
@@ -142,51 +142,6 @@
         "xci_name": "design_1_R1_0_0",
         "xci_path": "ip\\design_1_R1_0_0\\design_1_R1_0_0.xci",
         "inst_hier_path": "R1_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "R1",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "writeC": {
-            "direction": "I"
-          },
-          "D": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "A": {
-            "direction": "O",
-            "left": "15",
-            "right": "0"
-          },
-          "B": {
-            "direction": "O",
-            "left": "15",
-            "right": "0"
-          }
-        }
-      },
-      "R1_1": {
-        "vlnv": "xilinx.com:module_ref:R1:1.0",
-        "xci_name": "design_1_R1_1_0",
-        "xci_path": "ip\\design_1_R1_1_0\\design_1_R1_1_0.xci",
-        "inst_hier_path": "R1_1",
         "reference_info": {
           "ref_type": "hdl",
           "ref_name": "R1",
@@ -965,9 +920,70 @@
             "direction": "O"
           }
         }
+      },
+      "MAR_0": {
+        "vlnv": "xilinx.com:module_ref:MAR:1.0",
+        "xci_name": "design_1_MAR_0_0",
+        "xci_path": "ip\\design_1_MAR_0_0\\design_1_MAR_0_0.xci",
+        "inst_hier_path": "MAR_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MAR",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "writeC": {
+            "direction": "I"
+          },
+          "D": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "inc": {
+            "direction": "I"
+          },
+          "A": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "B": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
       }
     },
     "nets": {
+      "MAR_0_A": {
+        "ports": [
+          "MAR_0/A",
+          "mux_0/mar",
+          "data_ram_1/addr"
+        ]
+      },
+      "MAR_0_B": {
+        "ports": [
+          "MAR_0/B",
+          "mux_1/mar"
+        ]
+      },
       "R1_0_A": {
         "ports": [
           "R1_0/A",
@@ -978,19 +994,6 @@
         "ports": [
           "R1_0/B",
           "mux_1/str_pointer"
-        ]
-      },
-      "R1_1_A": {
-        "ports": [
-          "R1_1/A",
-          "data_ram_1/addr",
-          "mux_0/mar"
-        ]
-      },
-      "R1_1_B": {
-        "ports": [
-          "R1_1/B",
-          "mux_1/mar"
         ]
       },
       "R1_2_A": {
@@ -1182,9 +1185,6 @@
         "comment_9": "COL",
         "comment_10": "R1",
         "comment_11": "R2"
-      },
-      "/R1_1": {
-        "comment_3": "MAR"
       },
       "/R1_2": {
         "comment_4": "MDR"
