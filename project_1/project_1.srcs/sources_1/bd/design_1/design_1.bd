@@ -1027,7 +1027,7 @@
           "boundary_crc": "0x0"
         },
         "ports": {
-          "in": {
+          "sel": {
             "direction": "I",
             "left": "3",
             "right": "0"
@@ -1042,6 +1042,36 @@
             "direction": "O",
             "left": "11",
             "right": "0"
+          },
+          "str_pointer": {
+            "direction": "O"
+          },
+          "mar": {
+            "direction": "O"
+          },
+          "mdr": {
+            "direction": "O"
+          },
+          "pr1": {
+            "direction": "O"
+          },
+          "pr2": {
+            "direction": "O"
+          },
+          "pr3": {
+            "direction": "O"
+          },
+          "col": {
+            "direction": "O"
+          },
+          "row": {
+            "direction": "O"
+          },
+          "r1": {
+            "direction": "O"
+          },
+          "r2": {
+            "direction": "O"
           }
         }
       }
@@ -1372,8 +1402,7 @@
       },
       "ir_module_0_addrC": {
         "ports": [
-          "ir_module_0/addrC",
-          "Decoder_0/in"
+          "ir_module_0/addrC"
         ]
       },
       "mux_0_out": {
