@@ -22,7 +22,8 @@ module cu #(parameter BUS_WIDTH =16,
 	output reg col_zero,
 	output reg col_inc,
 	output reg row_inc,
-	output reg jump
+	output reg jump,
+	output reg clock_en
 );
 reg [OPCODE_LEN-1:0] opcode;
 reg [ADDR_AW-1:0] addr_A;
@@ -49,10 +50,13 @@ end
 always@(posedge clk)
 	begin
 		case(state)
-			'h00:begin
+		      // START
+			'h0:begin           
 				reset <=0;
 				state <= state +1;
 				end
+			
+			// FETCH	
 			'h01:begin
 				en_decAop <= 1;
 				en_decAout <= 1;
@@ -76,13 +80,34 @@ always@(posedge clk)
 				state <= state + 1;
 				//state <= opcode;
 				end
+			
+			//SELECTING THE INSTRUCTION STATE FROM OPCODE	
 			'h04:begin
 				case(opcode)
-				    'h00:state<=0;
-				    'h01:state<=1;
-				    'h02:state<=7;
+				    'h0:state<='h00;    //START
+				    'h1:state<='h01;    //FETCH
+				    'h2:state<='h05;    //LOADIM
+				    'h3:state<='h09;    //LOAD
+				    'h4:state<='h0b;    //LSHIFT1
+				    'h5:state<='h0e;    //LSHIFT2
+				    'h6:state<='h11;    //RSHIFT4
+				    'h7:state<='h14;    //ADD
+				    'h8:state<='h17;    //SUB
+				    'h9:state<='h1a;    //STORE
+				    'ha:state<='h1c;    //MOVE
+				    'hb:state<='h1f;    //JUMPNZ
+				    'hc:state<='h24;    //MAR INCREMENT
+				    'hd:state<='h26;    //COL INCREMENT
+				    'he:state<='h28;    //ROW INCREMENT
+				    'hf:state<='h0b;    //END
+				    
+				    
+				    
+				    
 				    endcase
 				end
+			
+			// LOAD IMMEDIATE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	
 			'h05:begin
 			     en_decAop <= 1;
 			     en_decCop <= 1;
@@ -90,7 +115,7 @@ always@(posedge clk)
 			     end
 			 'h06:begin
 			     en_decAop <= 0;
-			     en_decCop <= 1;
+			     en_decCop <= 0;
 			     imem_read <= 1;
 			     state <= state + 1;
 			     end
@@ -106,6 +131,8 @@ always@(posedge clk)
 			     pc_inc <= 1;
 			     state <= 1;
 			     end
+			 
+			 //LOAD~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			 'h09:begin
 			     dmem_read <=1;
 			     state <= state +1;
@@ -114,6 +141,8 @@ always@(posedge clk)
 			     dmem_read <=0;
 			     state <=1;
 			     end
+			     
+			 //LSHIFT1~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			 'h0b:state <= state +1;
 			 'h0c:begin
 			     alu_ctrl <= 4'b0011;
@@ -123,6 +152,7 @@ always@(posedge clk)
 			     alu_ctrl  <= 0;
 			     state <= 1;
 			     end
+			 //LSHIFT2~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			 'h0e:state <= state + 1;
 			 'h0f:begin
 			     alu_ctrl <= 4'b0100;
@@ -132,6 +162,8 @@ always@(posedge clk)
 			     alu_ctrl  <= 0;
 			     state <= 1;
 			     end
+			     
+			 //RSHIFT4~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
 			 'h11:state <= state +1;
 			 'h12:begin
 			     alu_ctrl <= 4'b0101;
@@ -141,6 +173,8 @@ always@(posedge clk)
 			     alu_ctrl <=0;
 			     state <= 1;
 			     end
+			     
+			 //ADD~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			 'h14:state <= state +1;
 			 'h15:begin
 			     alu_ctrl <= 4'b0001;
@@ -150,7 +184,9 @@ always@(posedge clk)
 			     alu_ctrl  <= 0;
 			     state <= 1;
 			     end
-			 'h17:state <= state + 1;  //SUB
+			     
+			 //SUB~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 'h17:state <= state + 1;  
 			 'h18:begin
 			     alu_ctrl <= 4'b0010;
 			     state <= state + 1;
@@ -159,7 +195,9 @@ always@(posedge clk)
 			     alu_ctrl <= 0;
 			     state <= 1;
 			     end
-			 'h1a:begin          //STORE
+			 
+			 //STORE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 'h1a:begin
 			     dmem_write <= 1;
 			     state <= state + 1;
 			     end
@@ -167,7 +205,9 @@ always@(posedge clk)
 			     dmem_write <= 0;
 			     state <= 1;
 			     end
-			 'h1c:state <= state + 1; //MOVE
+			 
+			 //MOVE~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 'h1c:state <= state + 1;
 			 'h1d:begin
 			     alu_ctrl <= 4'b0000;
 			     state <= state + 1;
@@ -175,7 +215,9 @@ always@(posedge clk)
 			 'h1e:begin
 			     state <= 1;
 			     end
-			 'h1f:begin          //JUMPNZ
+			     
+			 //JUMPNZ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 'h1f:begin          
 			     jump <= 1;
 			     en_decAop <= 1;
 			     en_decBop <= 1;     //Now addresses are saved in mux
@@ -194,51 +236,45 @@ always@(posedge clk)
 			     state <= state + 1;
 			     end
 			 'h22:state <= state + 1;
-			 /*'h22:begin                  //FETCH OR NOT??
-			     alu_ctrl <= 4'b0010;
-			     state <= state + 1;
-			     end*/
 			 'h23:state <= 1;
 			 ///////////////////////////
 			 //MAR INCREMENT
-			 'h99:begin
+			 'h24:begin
 			     mar_inc <=1;
 			     state <= state + 1;
 			     end
-			 'h100:begin
+			 'h25:begin
 			     mar_inc <= 0;
 			     state <= 1;
 			 end
 			 
 			 //COL INCREMENT
-			 'h100:begin
+			 'h26:begin
 			     col_inc <=1;
 			     state <= state + 1;
 			     end
-			 'h101:begin
+			 'h27:begin
 			     col_inc <= 0;
 			     state <= 1;
 			 end
 			 
 			 //ROW INCREMENT
-			 'h102:begin
+			 'h28:begin
 			     row_inc <=1;
 			     state <= state + 1;
-			     end
-			 'h103:begin
-			     row_inc <= 0;
-			     state <= 1;
-			 end
-			 
-			 //COL ZERO
-			 'h104:begin
 			     col_zero <=1;
-			     state <= state + 1;
 			     end
-			 'h105:begin
+			     
+			 'h29:begin
+			     row_inc <= 0;
 			     col_zero <= 0;
 			     state <= 1;
+			     state <= 1;
 			 end
+            
+            'h2a:begin
+                clock_en <=0;
+            end
 			 
 			 //////////////////////////
 		endcase	

@@ -15,19 +15,21 @@
       "R1_3": "",
       "R1_4": "",
       "R1_5": "",
-      "R1_6": "",
-      "R1_7": "",
       "R1_8": "",
       "R1_9": "",
-      "cu_0": "",
       "MAR_0": "",
       "PC_0": "",
       "mux_0": "",
       "mux_1": "",
       "ir_module_0": "",
+      "alu_16bit_0": "",
+      "cu_0": "",
       "data_ram_0": "",
       "data_ram_1": "",
-      "alu_16bit_0": ""
+      "clockgen_0": "",
+      "ROW_0": "",
+      "COL_0": "",
+      "Decoder_0": ""
     },
     "components": {
       "R1_0": {
@@ -255,96 +257,6 @@
           }
         }
       },
-      "R1_6": {
-        "vlnv": "xilinx.com:module_ref:R1:1.0",
-        "xci_name": "design_1_R1_6_0",
-        "xci_path": "ip\\design_1_R1_6_0\\design_1_R1_6_0.xci",
-        "inst_hier_path": "R1_6",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "R1",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "writeC": {
-            "direction": "I"
-          },
-          "D": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "A": {
-            "direction": "O",
-            "left": "15",
-            "right": "0"
-          },
-          "B": {
-            "direction": "O",
-            "left": "15",
-            "right": "0"
-          }
-        }
-      },
-      "R1_7": {
-        "vlnv": "xilinx.com:module_ref:R1:1.0",
-        "xci_name": "design_1_R1_7_1",
-        "xci_path": "ip\\design_1_R1_7_1\\design_1_R1_7_1.xci",
-        "inst_hier_path": "R1_7",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "R1",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "writeC": {
-            "direction": "I"
-          },
-          "D": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "A": {
-            "direction": "O",
-            "left": "15",
-            "right": "0"
-          },
-          "B": {
-            "direction": "O",
-            "left": "15",
-            "right": "0"
-          }
-        }
-      },
       "R1_8": {
         "vlnv": "xilinx.com:module_ref:R1:1.0",
         "xci_name": "design_1_R1_8_0",
@@ -432,79 +344,6 @@
             "direction": "O",
             "left": "15",
             "right": "0"
-          }
-        }
-      },
-      "cu_0": {
-        "vlnv": "xilinx.com:module_ref:cu:1.0",
-        "xci_name": "design_1_cu_0_0",
-        "xci_path": "ip\\design_1_cu_0_0\\design_1_cu_0_0.xci",
-        "inst_hier_path": "cu_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "cu",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "ir": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              }
-            }
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "O"
-          },
-          "en_decAop": {
-            "direction": "O"
-          },
-          "en_decBop": {
-            "direction": "O"
-          },
-          "en_decCop": {
-            "direction": "O"
-          },
-          "en_decAout": {
-            "direction": "O"
-          },
-          "en_decBout": {
-            "direction": "O"
-          },
-          "en_decCout": {
-            "direction": "O"
-          },
-          "alu_ctrl": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          },
-          "dmem_read": {
-            "direction": "O"
-          },
-          "dmem_write": {
-            "direction": "O"
-          },
-          "imem_read": {
-            "direction": "O"
-          },
-          "pc_inc": {
-            "direction": "O"
-          },
-          "mar_inc": {
-            "direction": "O"
-          },
-          "jump": {
-            "direction": "O"
           }
         }
       },
@@ -868,6 +707,126 @@
           }
         }
       },
+      "alu_16bit_0": {
+        "vlnv": "xilinx.com:module_ref:alu_16bit:1.0",
+        "xci_name": "design_1_alu_16bit_0_0",
+        "xci_path": "ip\\design_1_alu_16bit_0_0\\design_1_alu_16bit_0_0.xci",
+        "inst_hier_path": "alu_16bit_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "alu_16bit",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "operand1": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "operand2": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "operation": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "out": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "Z": {
+            "direction": "O"
+          }
+        }
+      },
+      "cu_0": {
+        "vlnv": "xilinx.com:module_ref:cu:1.0",
+        "xci_name": "design_1_cu_0_0",
+        "xci_path": "ip\\design_1_cu_0_0\\design_1_cu_0_0.xci",
+        "inst_hier_path": "cu_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "cu",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "ir": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "O"
+          },
+          "en_decAop": {
+            "direction": "O"
+          },
+          "en_decBop": {
+            "direction": "O"
+          },
+          "en_decCop": {
+            "direction": "O"
+          },
+          "en_decAout": {
+            "direction": "O"
+          },
+          "en_decBout": {
+            "direction": "O"
+          },
+          "en_decCout": {
+            "direction": "O"
+          },
+          "alu_ctrl": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "dmem_read": {
+            "direction": "O"
+          },
+          "dmem_write": {
+            "direction": "O"
+          },
+          "imem_read": {
+            "direction": "O"
+          },
+          "pc_inc": {
+            "direction": "O"
+          },
+          "mar_inc": {
+            "direction": "O"
+          },
+          "col_zero": {
+            "direction": "O"
+          },
+          "col_inc": {
+            "direction": "O"
+          },
+          "row_inc": {
+            "direction": "O"
+          },
+          "jump": {
+            "direction": "O"
+          },
+          "clock_en": {
+            "type": "clk",
+            "direction": "O"
+          }
+        }
+      },
       "data_ram_0": {
         "vlnv": "xilinx.com:module_ref:data_ram:1.0",
         "xci_name": "design_1_data_ram_0_0",
@@ -938,48 +897,168 @@
           }
         }
       },
-      "alu_16bit_0": {
-        "vlnv": "xilinx.com:module_ref:alu_16bit:1.0",
-        "xci_name": "design_1_alu_16bit_0_0",
-        "xci_path": "ip\\design_1_alu_16bit_0_0\\design_1_alu_16bit_0_0.xci",
-        "inst_hier_path": "alu_16bit_0",
+      "clockgen_0": {
+        "vlnv": "xilinx.com:module_ref:clockgen:1.0",
+        "xci_name": "design_1_clockgen_0_0",
+        "xci_path": "ip\\design_1_clockgen_0_0\\design_1_clockgen_0_0.xci",
+        "inst_hier_path": "clockgen_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "alu_16bit",
+          "ref_name": "clockgen",
           "boundary_crc": "0x0"
         },
         "ports": {
-          "operand1": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "operand2": {
-            "direction": "I",
-            "left": "15",
-            "right": "0"
-          },
-          "operation": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
+          "enable": {
+            "direction": "I"
           },
           "clk": {
             "type": "clk",
+            "direction": "O"
+          }
+        }
+      },
+      "ROW_0": {
+        "vlnv": "xilinx.com:module_ref:ROW:1.0",
+        "xci_name": "design_1_ROW_0_0",
+        "xci_path": "ip\\design_1_ROW_0_0\\design_1_ROW_0_0.xci",
+        "inst_hier_path": "ROW_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ROW",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
             "direction": "I"
           },
-          "out": {
+          "writeC": {
+            "direction": "I"
+          },
+          "D": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "inc": {
+            "direction": "I"
+          },
+          "A": {
             "direction": "O",
             "left": "15",
             "right": "0"
           },
-          "Z": {
-            "direction": "O"
+          "B": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      },
+      "COL_0": {
+        "vlnv": "xilinx.com:module_ref:COL:1.0",
+        "xci_name": "design_1_COL_0_0",
+        "xci_path": "ip\\design_1_COL_0_0\\design_1_COL_0_0.xci",
+        "inst_hier_path": "COL_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "COL",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "writeC": {
+            "direction": "I"
+          },
+          "D": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "inc": {
+            "direction": "I"
+          },
+          "zero": {
+            "direction": "I"
+          },
+          "A": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          },
+          "B": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
+      },
+      "Decoder_0": {
+        "vlnv": "xilinx.com:module_ref:Decoder:1.0",
+        "xci_name": "design_1_Decoder_0_0",
+        "xci_path": "ip\\design_1_Decoder_0_0\\design_1_Decoder_0_0.xci",
+        "inst_hier_path": "Decoder_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Decoder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "in": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "EN_OP": {
+            "direction": "I"
+          },
+          "EN_OUT": {
+            "direction": "I"
+          },
+          "OUT": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
           }
         }
       }
     },
     "nets": {
+      "COL_0_A": {
+        "ports": [
+          "COL_0/A",
+          "mux_0/col"
+        ]
+      },
+      "COL_0_B": {
+        "ports": [
+          "COL_0/B",
+          "mux_1/col"
+        ]
+      },
       "MAR_0_A": {
         "ports": [
           "MAR_0/A",
@@ -1054,30 +1133,6 @@
           "mux_1/pr3"
         ]
       },
-      "R1_6_A": {
-        "ports": [
-          "R1_6/A",
-          "mux_0/col"
-        ]
-      },
-      "R1_6_B": {
-        "ports": [
-          "R1_6/B",
-          "mux_1/col"
-        ]
-      },
-      "R1_7_A": {
-        "ports": [
-          "R1_7/A",
-          "mux_0/row"
-        ]
-      },
-      "R1_7_B": {
-        "ports": [
-          "R1_7/B",
-          "mux_1/row"
-        ]
-      },
       "R1_8_A": {
         "ports": [
           "R1_8/A",
@@ -1102,6 +1157,18 @@
           "mux_1/r2"
         ]
       },
+      "ROW_0_A": {
+        "ports": [
+          "ROW_0/A",
+          "mux_0/row"
+        ]
+      },
+      "ROW_0_B": {
+        "ports": [
+          "ROW_0/B",
+          "mux_1/row"
+        ]
+      },
       "alu_16bit_0_Z": {
         "ports": [
           "alu_16bit_0/Z",
@@ -1113,19 +1180,72 @@
           "alu_16bit_0/out",
           "R1_9/D",
           "R1_8/D",
-          "R1_7/D",
           "R1_5/D",
           "R1_4/D",
           "R1_3/D",
-          "R1_2/D",
           "MAR_0/D",
-          "R1_0/D"
+          "R1_0/D",
+          "COL_0/D",
+          "ROW_0/D"
+        ]
+      },
+      "clockgen_0_clk": {
+        "ports": [
+          "clockgen_0/clk",
+          "data_ram_0/clk",
+          "data_ram_1/clk",
+          "R1_0/clk",
+          "PC_0/clk",
+          "ir_module_0/clk",
+          "MAR_0/clk",
+          "R1_2/clk",
+          "R1_3/clk",
+          "R1_4/clk",
+          "R1_5/clk",
+          "R1_9/clk",
+          "R1_8/clk",
+          "mux_1/clk",
+          "alu_16bit_0/clk",
+          "mux_0/clk",
+          "cu_0/clk",
+          "COL_0/clk",
+          "ROW_0/clk"
         ]
       },
       "cu_0_alu_ctrl": {
         "ports": [
           "cu_0/alu_ctrl",
           "alu_16bit_0/operation"
+        ]
+      },
+      "cu_0_clock_en": {
+        "ports": [
+          "cu_0/clock_en",
+          "clockgen_0/enable"
+        ]
+      },
+      "cu_0_col_inc": {
+        "ports": [
+          "cu_0/col_inc",
+          "COL_0/inc"
+        ]
+      },
+      "cu_0_col_zero": {
+        "ports": [
+          "cu_0/col_zero",
+          "COL_0/zero"
+        ]
+      },
+      "cu_0_dmem_read": {
+        "ports": [
+          "cu_0/dmem_read",
+          "R1_2/writeC"
+        ]
+      },
+      "cu_0_dmem_write": {
+        "ports": [
+          "cu_0/dmem_write",
+          "data_ram_1/we"
         ]
       },
       "cu_0_en_decAop": {
@@ -1152,6 +1272,18 @@
           "mux_1/en_out"
         ]
       },
+      "cu_0_en_decCop": {
+        "ports": [
+          "cu_0/en_decCop",
+          "Decoder_0/EN_OP"
+        ]
+      },
+      "cu_0_en_decCout": {
+        "ports": [
+          "cu_0/en_decCout",
+          "Decoder_0/EN_OUT"
+        ]
+      },
       "cu_0_imem_read": {
         "ports": [
           "cu_0/imem_read",
@@ -1164,10 +1296,41 @@
           "PC_0/jump"
         ]
       },
+      "cu_0_mar_inc": {
+        "ports": [
+          "cu_0/mar_inc",
+          "MAR_0/inc"
+        ]
+      },
       "cu_0_pc_inc": {
         "ports": [
           "cu_0/pc_inc",
           "PC_0/inc"
+        ]
+      },
+      "cu_0_reset": {
+        "ports": [
+          "cu_0/reset",
+          "R1_0/rst",
+          "PC_0/reset",
+          "ir_module_0/rst",
+          "MAR_0/rst",
+          "R1_2/rst",
+          "R1_3/rst",
+          "R1_4/rst",
+          "R1_5/rst",
+          "R1_8/rst",
+          "R1_9/rst",
+          "mux_1/reset",
+          "mux_0/reset",
+          "ROW_0/rst",
+          "COL_0/rst"
+        ]
+      },
+      "cu_0_row_inc": {
+        "ports": [
+          "cu_0/row_inc",
+          "ROW_0/inc"
         ]
       },
       "data_ram_0_dout": {
@@ -1176,10 +1339,17 @@
           "ir_module_0/din"
         ]
       },
+      "data_ram_1_dout": {
+        "ports": [
+          "data_ram_1/dout",
+          "R1_2/D"
+        ]
+      },
       "ir_module_0_A": {
         "ports": [
           "ir_module_0/A",
-          "mux_0/ir"
+          "mux_0/ir",
+          "cu_0/ir"
         ]
       },
       "ir_module_0_B": {
@@ -1198,6 +1368,12 @@
         "ports": [
           "ir_module_0/addrB",
           "mux_1/sel"
+        ]
+      },
+      "ir_module_0_addrC": {
+        "ports": [
+          "ir_module_0/addrC",
+          "Decoder_0/in"
         ]
       },
       "mux_0_out": {
