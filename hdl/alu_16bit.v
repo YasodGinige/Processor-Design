@@ -49,8 +49,8 @@ module alu_16bit #(
     
     always@(posedge clk)begin
         if(out == 0)
-            Z <= 1;
-        else
             Z <= 0;
+        else
+            Z <= 1;
     end
 endmodule

@@ -19,7 +19,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module data_ram #(parameter DWIDTH = 16, parameter ADDR_WIDTH= 17)(
+module data_ram #(parameter DWIDTH = 16, parameter ADDR_WIDTH= 16)(
  input [DWIDTH-1:0] data,
  input [ADDR_WIDTH-1:0] addr,
  
@@ -27,8 +27,8 @@ module data_ram #(parameter DWIDTH = 16, parameter ADDR_WIDTH= 17)(
  output [DWIDTH-1:0] dout
  );
 
-parameter DEPTH = 1<< ADDR_WIDTH; 
- reg [DEPTH:0] ram [255:0];
+ parameter DEPTH = 1<< ADDR_WIDTH; 
+ reg [255:0] ram [0:DEPTH];
  reg [ADDR_WIDTH:0] addr_reg;
  
  always @ (posedge clk)
@@ -37,8 +37,8 @@ parameter DEPTH = 1<< ADDR_WIDTH;
    ram[addr]<=data;
   else
    addr_reg<=addr;
-   
+   ram[addr] <= addr;
  end
 
- assign dout = ram[addr_reg];
+ assign dout = (~we) ? ram[addr_reg] : 0;
 endmodule
