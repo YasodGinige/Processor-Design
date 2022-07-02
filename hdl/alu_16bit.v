@@ -27,7 +27,8 @@ module alu_16bit #(
     input [DWIDTH-1:0] operand2,
     input [3:0] operation,
     input clk,
-    output reg [DWIDTH-1:0] out
+    output reg [DWIDTH-1:0] out,
+    output reg Z
     );
     
     
@@ -44,5 +45,12 @@ module alu_16bit #(
             4'b0110 : out = operand1 + 1;
             default : out = 2'h0000;
             endcase
+    end
+    
+    always@(posedge clk)begin
+        if(out == 0)
+            Z <= 1;
+        else
+            Z <= 0;
     end
 endmodule
