@@ -38,7 +38,7 @@ module mux (
                        input [15:0] row,
                        input [15:0] r1,
                        input [15:0] r2,                  
-                       output reg [15:0] out);         // 4-bit output based on input sel  
+                       output reg [15:0] dout);         // 4-bit output based on input sel  
   
     reg [15:0] temp;
     reg [3:0] temp_sel;
@@ -61,6 +61,6 @@ module mux (
              4'b1100 : temp <= r2;           
           endcase
         if (en_out)
-            out <= temp; 
+            dout <= temp; 
     end    
 endmodule  

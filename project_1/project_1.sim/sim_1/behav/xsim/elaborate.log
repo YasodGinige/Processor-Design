@@ -1,16 +1,51 @@
 Vivado Simulator v2021.2
 Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sim1_behav xil_defaultlib.sim1 xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xlconstant_v1_1_7 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot design_1_wrapper_behav xil_defaultlib.design_1_wrapper xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "C:/Users/menuw/Documents/Processor-Design/hdl/cu.v" Line 1. Module cu doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "C:/Users/menuw/Documents/Processor-Design/hdl/cu.v" Line 1. Module cu doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.COL
+Compiling module xil_defaultlib.design_1_COL_0_0
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.design_1_Decoder_0_0
+Compiling module xil_defaultlib.MAR
+Compiling module xil_defaultlib.design_1_MAR_0_0
+Compiling module xil_defaultlib.MDR_Mux
+Compiling module xil_defaultlib.design_1_MDR_Mux_0_0
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.design_1_PC_0_0
+Compiling module xil_defaultlib.R1
+Compiling module xil_defaultlib.design_1_R1_0_0
+Compiling module xil_defaultlib.design_1_R1_2_0
+Compiling module xil_defaultlib.design_1_R1_3_0
+Compiling module xil_defaultlib.design_1_R1_4_0
+Compiling module xil_defaultlib.design_1_R1_5_0
+Compiling module xil_defaultlib.design_1_R1_8_0
+Compiling module xil_defaultlib.design_1_R1_9_0
+Compiling module xil_defaultlib.ROW
+Compiling module xil_defaultlib.design_1_ROW_0_0
+Compiling module xil_defaultlib.alu_16bit
+Compiling module xil_defaultlib.design_1_alu_16bit_0_0
+Compiling module xil_defaultlib.clockgen(clk_pd=0,clk_on=0,clk_o...
+Compiling module xil_defaultlib.design_1_clockgen_0_0
 Compiling module xil_defaultlib.cu
-Compiling module xil_defaultlib.sim1
+Compiling module xil_defaultlib.design_1_cu_0_0
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.design_1_data_ram_1_0
+Compiling module xil_defaultlib.imem_ram
+Compiling module xil_defaultlib.design_1_imem_ram_0_0
+Compiling module xil_defaultlib.ir_module
+Compiling module xil_defaultlib.design_1_ir_module_0_0
+Compiling module xil_defaultlib.mux
+Compiling module xil_defaultlib.design_1_mux_0_0
+Compiling module xil_defaultlib.design_1_mux_1_0
+Compiling module xlconstant_v1_1_7.xlconstant_v1_1_7_xlconstant(CON...
+Compiling module xil_defaultlib.design_1_xlconstant_0_0
+Compiling module xil_defaultlib.design_1
+Compiling module xil_defaultlib.design_1_wrapper
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot sim1_behav
+Built simulation snapshot design_1_wrapper_behav

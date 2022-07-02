@@ -27,7 +27,7 @@ module alu_16bit #(
     input [DWIDTH-1:0] operand2,
     input [3:0] operation,
     input clk,
-    output reg [DWIDTH-1:0] out,
+    output reg [DWIDTH-1:0] dout,
     output reg Z
     );
     
@@ -36,19 +36,19 @@ module alu_16bit #(
     always@(posedge clk) begin
         
         case(operation)
-            4'b0000 : out = operand1;
-            4'b0001 : out = operand1 + operand2;
-            4'b0010 : out = operand1 - operand2;
-            4'b0011 : out = operand1 << 1;
-            4'b0100 : out = operand1 << 2;
-            4'b0101 : out = operand1 >> 4;
-            4'b0110 : out = operand1 + 1;
-            default : out = 2'h0000;
+            4'b0000 : dout = operand1;
+            4'b0001 : dout = operand1 + operand2;
+            4'b0010 : dout = operand1 - operand2;
+            4'b0011 : dout = operand1 << 1;
+            4'b0100 : dout = operand1 << 2;
+            4'b0101 : dout = operand1 >> 4;
+            4'b0110 : dout = operand1 + 1;
+            default : dout = 2'h0000;
             endcase
     end
     
     always@(posedge clk)begin
-        if(out == 0)
+        if(dout == 0)
             Z <= 0;
         else
             Z <= 1;

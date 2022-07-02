@@ -27,10 +27,13 @@ module data_ram #(parameter DWIDTH = 16, parameter ADDR_WIDTH= 16)(
  output [DWIDTH-1:0] dout
  );
 
- parameter DEPTH = 1<< ADDR_WIDTH; 
- reg [255 :0] ram [DEPTH:0];
+// parameter DEPTH = 1<< ADDR_WIDTH; 
+ reg [255 :0] ram [65536:0];
  //reg [ADDR_WIDTH:0] addr_reg;
- 
+  initial begin
+    $readmemh("imem.mem",ram,0,65536); // read file from INFILE
+end
+
  always @ (posedge clk)
  begin
   if(we)

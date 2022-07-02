@@ -39,18 +39,18 @@ module Decoder(
     reg [3:0]temp_sel;
     reg [11:0] temp;
     reg [11:0] out;
-    assign out[0] = str_pointer;
-    assign out[3] = mar;
-    assign out[4] = mdr;
-    assign out[5] = pr1;
-    assign out[6] = pr2;
-    assign out[7] = pr3;
-    assign out[8] = col;
-    assign out[9] = row;
-    assign out[10] = r1;
-    assign out[11] = r2;
+    assign str_pointer = out[0];
+    assign mar = out[3];
+    assign mdr = out[4];
+    assign pr1 = out[5];
+    assign pr2 = out[6];
+    assign pr3 = out[7];
+    assign col = out[8];
+    assign row = out[9];
+    assign r1 = out[10];
+    assign r2 = out[11];
     
-    always@(sel)
+    always@(*)
     begin
     if (EN_OP==1)
         temp_sel = sel;
