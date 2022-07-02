@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.16629",
-   "Default View_TopLeft":"514,-898",
+   "Default View_ScaleFactor":"1.15855",
+   "Default View_TopLeft":"1378,-1007",
    "ExpandedHierarchyInLayout":"",
    "PinnedBlocks":"/data_ram_0|/alu_16bit_0|/cu_0|/mux_0|/mux_1|/data_ram_1|/R1_0|/ir_module_0|/R1_2|/R1_3|/R1_4|/R1_5|/R1_8|/R1_9|",
    "comment_0":"STR_POINTER",
@@ -30,90 +30,93 @@
    "font_comment_9":"9",
    "guistr":"# # String gsaved with Nlview 7.0r6  2020-01-29 bk=1.5227 VDI=41 GEI=36 GUI=JA:10.0 non-TLS
 #  -string -flagsOSRD
-preplace inst R1_0 -pg 1 -lvl 3 -x 930 -y -970 -defaultsOSRD
-preplace inst R1_2 -pg 1 -lvl 3 -x 930 -y -180 -defaultsOSRD
-preplace inst R1_3 -pg 1 -lvl 3 -x 930 -y 170 -defaultsOSRD
-preplace inst R1_4 -pg 1 -lvl 3 -x 930 -y 460 -defaultsOSRD
-preplace inst R1_5 -pg 1 -lvl 3 -x 930 -y 620 -defaultsOSRD
-preplace inst R1_8 -pg 1 -lvl 3 -x 930 -y 1160 -defaultsOSRD
-preplace inst R1_9 -pg 1 -lvl 3 -x 930 -y 1320 -defaultsOSRD
-preplace inst MAR_0 -pg 1 -lvl 3 -x 930 -y -390 -defaultsOSRD
-preplace inst PC_0 -pg 1 -lvl 3 -x 930 -y -770 -defaultsOSRD
+preplace inst R1_0 -pg 1 -lvl 3 -x 1020 -y -970 -defaultsOSRD
+preplace inst R1_2 -pg 1 -lvl 3 -x 1020 -y -180 -defaultsOSRD
+preplace inst R1_3 -pg 1 -lvl 3 -x 1020 -y 170 -defaultsOSRD
+preplace inst R1_4 -pg 1 -lvl 3 -x 1020 -y 460 -defaultsOSRD
+preplace inst R1_5 -pg 1 -lvl 3 -x 1020 -y 620 -defaultsOSRD
+preplace inst R1_8 -pg 1 -lvl 3 -x 1020 -y 1160 -defaultsOSRD
+preplace inst R1_9 -pg 1 -lvl 3 -x 1020 -y 1320 -defaultsOSRD
+preplace inst MAR_0 -pg 1 -lvl 3 -x 1020 -y -390 -defaultsOSRD
+preplace inst PC_0 -pg 1 -lvl 3 -x 1020 -y -770 -defaultsOSRD
 preplace inst mux_0 -pg 1 -lvl 4 -x 1690 -y -170 -defaultsOSRD
 preplace inst mux_1 -pg 1 -lvl 4 -x 1690 -y 430 -defaultsOSRD
-preplace inst ir_module_0 -pg 1 -lvl 3 -x 930 -y -580 -defaultsOSRD
+preplace inst ir_module_0 -pg 1 -lvl 3 -x 1020 -y -580 -defaultsOSRD
 preplace inst alu_16bit_0 -pg 1 -lvl 5 -x 1990 -y 30 -defaultsOSRD
 preplace inst cu_0 -pg 1 -lvl 4 -x 1690 -y -730 -defaultsOSRD -orient R180
 preplace inst data_ram_0 -pg 1 -lvl 1 -x 20 -y -690 -defaultsOSRD
-preplace inst data_ram_1 -pg 1 -lvl 2 -x 510 -y -370 -defaultsOSRD
+preplace inst data_ram_1 -pg 1 -lvl 2 -x 610 -y -370 -defaultsOSRD
 preplace inst clockgen_0 -pg 1 -lvl 1 -x 20 -y -510 -defaultsOSRD
-preplace inst ROW_0 -pg 1 -lvl 3 -x 930 -y 990 -defaultsOSRD
-preplace inst COL_0 -pg 1 -lvl 3 -x 930 -y 800 -defaultsOSRD
+preplace inst ROW_0 -pg 1 -lvl 3 -x 1020 -y 990 -defaultsOSRD
+preplace inst COL_0 -pg 1 -lvl 3 -x 1020 -y 800 -defaultsOSRD
 preplace inst Decoder_0 -pg 1 -lvl 5 -x 1990 -y -580 -defaultsOSRD
-preplace netloc MAR_0_A 1 1 3 170 -280 N -280 1130
-preplace netloc MAR_0_B 1 3 1 1080 -380n
-preplace netloc R1_0_A 1 3 1 1200 -980n
-preplace netloc R1_0_B 1 3 1 1140 -960n
-preplace netloc R1_2_A 1 1 3 150 -270 NJ -270 1120
-preplace netloc R1_2_B 1 3 1 1070 -170n
-preplace netloc R1_3_A 1 3 1 1120 -130n
-preplace netloc R1_3_B 1 3 1 1060 180n
-preplace netloc R1_4_A 1 3 1 1050 -110n
-preplace netloc R1_4_B 1 3 1 1050 470n
-preplace netloc R1_5_A 1 3 1 1150 -90n
-preplace netloc R1_5_B 1 3 1 1190 510n
-preplace netloc R1_8_A 1 3 1 1200 -30n
-preplace netloc R1_8_B 1 3 1 1320 570n
-preplace netloc R1_9_A 1 3 1 1220 -10n
-preplace netloc R1_9_B 1 3 1 1340 590n
-preplace netloc alu_16bit_0_Z 1 2 4 700 -1160 NJ -1160 NJ -1160 2130
-preplace netloc alu_16bit_0_out 1 2 4 690 80 1090J 120 NJ 120 2120
-preplace netloc cu_0_alu_ctrl 1 3 2 1320 50 1850
-preplace netloc cu_0_en_decAop 1 3 1 1350 -580n
-preplace netloc cu_0_en_decAout 1 3 1 1340 -640n
-preplace netloc cu_0_en_decBop 1 3 1 1330 -600n
-preplace netloc cu_0_en_decBout 1 3 1 1310 -660n
-preplace netloc cu_0_imem_read 1 2 2 730 -1080 1260J
-preplace netloc cu_0_jump 1 2 2 710 -1120 1310J
-preplace netloc cu_0_pc_inc 1 2 2 760 -1070 1250J
-preplace netloc data_ram_0_dout 1 1 2 NJ -690 650
-preplace netloc ir_module_0_A 1 3 2 1270 -960 1820
-preplace netloc ir_module_0_B 1 3 1 1100 -610n
-preplace netloc ir_module_0_addrA 1 3 1 1180 -590n
-preplace netloc ir_module_0_addrB 1 3 1 1110 -570n
+preplace inst MDR_Mux_0 -pg 1 -lvl 2 -x 610 -y -150 -defaultsOSRD
+preplace netloc MAR_0_A 1 1 3 190 -280 N -280 1210
+preplace netloc MAR_0_B 1 3 1 1170 -380n
+preplace netloc R1_0_A 1 3 1 1270 -980n
+preplace netloc R1_0_B 1 3 1 1220 -960n
+preplace netloc R1_2_A 1 1 3 180 -270 NJ -270 1190
+preplace netloc R1_2_B 1 3 1 1160 -170n
+preplace netloc R1_3_A 1 3 1 1210 -130n
+preplace netloc R1_3_B 1 3 1 1150 180n
+preplace netloc R1_4_A 1 3 1 1140 -110n
+preplace netloc R1_4_B 1 3 1 1140 470n
+preplace netloc R1_5_A 1 3 1 1230 -90n
+preplace netloc R1_5_B 1 3 1 1280 510n
+preplace netloc R1_8_A 1 3 1 1290 -30n
+preplace netloc R1_8_B 1 3 1 1400 570n
+preplace netloc R1_9_A 1 3 1 1310 -10n
+preplace netloc R1_9_B 1 3 1 1410 590n
+preplace netloc alu_16bit_0_Z 1 2 4 860 -1140 NJ -1140 NJ -1140 2130
+preplace netloc alu_16bit_0_out 1 1 5 190 -60 780 -1180 NJ -1180 NJ -1180 2140
+preplace netloc cu_0_alu_ctrl 1 3 2 1380 50 1860
+preplace netloc cu_0_en_decAop 1 3 1 1410 -580n
+preplace netloc cu_0_en_decAout 1 3 1 1400 -640n
+preplace netloc cu_0_en_decBop 1 3 1 1390 -600n
+preplace netloc cu_0_en_decBout 1 3 1 1370 -660n
+preplace netloc cu_0_imem_read 1 2 2 870 -1090 1300J
+preplace netloc cu_0_jump 1 2 2 880 -1080 1360J
+preplace netloc cu_0_pc_inc 1 2 2 900 -870 1280J
+preplace netloc data_ram_0_dout 1 1 2 NJ -690 790
+preplace netloc ir_module_0_A 1 3 2 1330 -960 1820
+preplace netloc ir_module_0_B 1 3 1 1180 -610n
+preplace netloc ir_module_0_addrA 1 3 1 1230 -590n
+preplace netloc ir_module_0_addrB 1 3 1 1200 -570n
 preplace netloc mux_0_out 1 4 1 1820 -170n
-preplace netloc mux_1_out 1 4 1 1840 20n
-preplace netloc pc_project_demo_1_PCResult 1 0 4 -740 -1150 N -1150 N -1150 1210
-preplace netloc cu_0_clock_en 1 0 4 -750 -1140 NJ -1140 NJ -1140 1320J
-preplace netloc clockgen_0_clk 1 0 5 -740 -570 140 -570 640 -290 1240 -390 1830
-preplace netloc cu_0_reset 1 2 2 680 -1060 1170
-preplace netloc cu_0_dmem_read 1 2 2 720 -1090 1240J
-preplace netloc data_ram_1_dout 1 2 1 630 -370n
-preplace netloc cu_0_dmem_write 1 1 3 160 -1130 NJ -1130 1280J
-preplace netloc cu_0_mar_inc 1 2 2 750 -880 1220J
-preplace netloc COL_0_A 1 3 1 1160 -70n
-preplace netloc COL_0_B 1 3 1 1210 530n
-preplace netloc ROW_0_A 1 3 1 1180 -50n
-preplace netloc ROW_0_B 1 3 1 1290 550n
-preplace netloc cu_0_row_inc 1 2 2 740 -870 1230J
-preplace netloc cu_0_col_inc 1 2 2 660 -1110 1300J
-preplace netloc cu_0_col_zero 1 2 2 670 -1100 1290J
-preplace netloc ir_module_0_addrC 1 3 1 NJ -550
-preplace netloc cu_0_en_decCop 1 3 2 1330 -980 1850
-preplace netloc cu_0_en_decCout 1 3 2 1340 -970 1840
+preplace netloc mux_1_out 1 4 1 1850 20n
+preplace netloc pc_project_demo_1_PCResult 1 0 4 -740 -1120 N -1120 N -1120 1260
+preplace netloc cu_0_clock_en 1 0 4 -750 -1150 NJ -1150 NJ -1150 1380J
+preplace netloc clockgen_0_clk 1 0 5 -740 -570 140 -570 800 -290 1320 -390 1830
+preplace netloc cu_0_reset 1 2 2 840 -1070 1250
+preplace netloc cu_0_dmem_write 1 1 3 170 -1130 NJ -1130 1320J
+preplace netloc cu_0_mar_inc 1 2 2 890 -880 1290J
+preplace netloc COL_0_A 1 3 1 1240 -70n
+preplace netloc COL_0_B 1 3 1 1300 530n
+preplace netloc ROW_0_A 1 3 1 1270 -50n
+preplace netloc ROW_0_B 1 3 1 1390 550n
+preplace netloc cu_0_row_inc 1 2 2 850 -1060 1310J
+preplace netloc cu_0_col_inc 1 2 2 820 -1110 1370J
+preplace netloc cu_0_col_zero 1 2 2 830 -1100 1340J
+preplace netloc ir_module_0_addrC 1 3 2 1170J -990 1860
+preplace netloc cu_0_en_decCop 1 3 2 1390 -980 1850
+preplace netloc cu_0_en_decCout 1 3 2 1400 -970 1840
+preplace netloc MDR_Mux_0_MDR_in 1 2 1 N -150
+preplace netloc cu_0_dmem_read 1 1 3 150 -1170 NJ -1170 1350J
+preplace netloc Decoder_0_mdr 1 2 4 810 -1160 NJ -1160 NJ -1160 2120
+preplace netloc data_ram_1_dout 1 1 2 160 -460 770
 preplace cgraphic comment_2 place top 802 512 textcolor 4 linecolor 3 linewidth 2
 preplace cgraphic comment_1 place top 798 329 textcolor 4 linecolor 3 linewidth 2
 preplace cgraphic comment_0 place top 849 116 textcolor 4 linecolor 3 linewidth 2
-preplace cgraphic comment_7 place bot 719 -987 textcolor 4 linecolor 3 linewidth 2
-preplace cgraphic comment_6 place bot 725 -1147 textcolor 4 linecolor 3 linewidth 2
-preplace cgraphic comment_5 place right -1145 82 textcolor 4 linecolor 3 linewidth 2
+preplace cgraphic comment_7 place bot 861 -1030 textcolor 4 linecolor 3 linewidth 2
+preplace cgraphic comment_6 place bot 863 -1196 textcolor 4 linecolor 3 linewidth 2
+preplace cgraphic comment_5 place top 859 1292 textcolor 4 linecolor 3 linewidth 2
 preplace cgraphic comment_4 place top -77 -15 textcolor 4 linecolor 3 linewidth 2
-preplace cgraphic comment_11 place bot 710 -349 textcolor 4 linecolor 3 linewidth 2
-preplace cgraphic comment_10 place left 770 0 textcolor 4 linecolor 3
-preplace cgraphic comment_9 place bot 721 -824 textcolor 4 linecolor 3 linewidth 2
-preplace cgraphic comment_8 place bot 718 -663 textcolor 4 linecolor 3 linewidth 2
-levelinfo -pg 1 -770 20 510 930 1690 1990 2320 2520
-pagesize -pg 1 -db -bbox -sgen -770 -1200 2520 1570
+preplace cgraphic comment_11 place bot 856 -334 textcolor 4 linecolor 3 linewidth 2
+preplace cgraphic comment_10 place bot 848 -498 textcolor 4 linecolor 3
+preplace cgraphic comment_9 place bot 862 -869 textcolor 4 linecolor 3 linewidth 2
+preplace cgraphic comment_8 place bot 860 -672 textcolor 4 linecolor 3 linewidth 2
+levelinfo -pg 1 -770 20 610 1020 1690 1990 2320
+pagesize -pg 1 -db -bbox -sgen -770 -1200 2320 1570
 ",
    "linecolor_comment_4":"",
    "linktoobj_comment_10":"",

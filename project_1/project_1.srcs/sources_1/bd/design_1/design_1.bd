@@ -29,7 +29,8 @@
       "clockgen_0": "",
       "ROW_0": "",
       "COL_0": "",
-      "Decoder_0": ""
+      "Decoder_0": "",
+      "MDR_Mux_0": ""
     },
     "components": {
       "R1_0": {
@@ -1074,6 +1075,41 @@
             "direction": "O"
           }
         }
+      },
+      "MDR_Mux_0": {
+        "vlnv": "xilinx.com:module_ref:MDR_Mux:1.0",
+        "xci_name": "design_1_MDR_Mux_0_0",
+        "xci_path": "ip\\design_1_MDR_Mux_0_0\\design_1_MDR_Mux_0_0.xci",
+        "inst_hier_path": "MDR_Mux_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "MDR_Mux",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "dmem_read": {
+            "direction": "I"
+          },
+          "C_Bus": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "Mem_Data_Bus": {
+            "direction": "I",
+            "left": "15",
+            "right": "0"
+          },
+          "MDR_in": {
+            "direction": "O",
+            "left": "15",
+            "right": "0"
+          }
+        }
       }
     },
     "nets": {
@@ -1089,6 +1125,12 @@
           "mux_1/col"
         ]
       },
+      "Decoder_0_mdr": {
+        "ports": [
+          "Decoder_0/mdr",
+          "R1_2/writeC"
+        ]
+      },
       "MAR_0_A": {
         "ports": [
           "MAR_0/A",
@@ -1100,6 +1142,12 @@
         "ports": [
           "MAR_0/B",
           "mux_1/mar"
+        ]
+      },
+      "MDR_Mux_0_MDR_in": {
+        "ports": [
+          "MDR_Mux_0/MDR_in",
+          "R1_2/D"
         ]
       },
       "R1_0_A": {
@@ -1216,7 +1264,8 @@
           "MAR_0/D",
           "R1_0/D",
           "COL_0/D",
-          "ROW_0/D"
+          "ROW_0/D",
+          "MDR_Mux_0/C_Bus"
         ]
       },
       "clockgen_0_clk": {
@@ -1239,7 +1288,8 @@
           "mux_0/clk",
           "cu_0/clk",
           "COL_0/clk",
-          "ROW_0/clk"
+          "ROW_0/clk",
+          "MDR_Mux_0/clk"
         ]
       },
       "cu_0_alu_ctrl": {
@@ -1269,7 +1319,7 @@
       "cu_0_dmem_read": {
         "ports": [
           "cu_0/dmem_read",
-          "R1_2/writeC"
+          "MDR_Mux_0/dmem_read"
         ]
       },
       "cu_0_dmem_write": {
@@ -1372,7 +1422,7 @@
       "data_ram_1_dout": {
         "ports": [
           "data_ram_1/dout",
-          "R1_2/D"
+          "MDR_Mux_0/Mem_Data_Bus"
         ]
       },
       "ir_module_0_A": {
@@ -1402,7 +1452,8 @@
       },
       "ir_module_0_addrC": {
         "ports": [
-          "ir_module_0/addrC"
+          "ir_module_0/addrC",
+          "Decoder_0/sel"
         ]
       },
       "mux_0_out": {
