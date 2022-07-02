@@ -28,17 +28,18 @@ module data_ram #(parameter DWIDTH = 16, parameter ADDR_WIDTH= 16)(
  );
 
  parameter DEPTH = 1<< ADDR_WIDTH; 
- reg [255:0] ram [0:DEPTH];
- reg [ADDR_WIDTH:0] addr_reg;
+ reg [255 :0] ram [DEPTH:0];
+ //reg [ADDR_WIDTH:0] addr_reg;
  
  always @ (posedge clk)
  begin
   if(we)
    ram[addr]<=data;
   else
-   addr_reg<=addr;
-   ram[addr] <= addr;
+   //addr_reg<=addr;
+   ram[addr] <= ram[addr];
  end
 
- assign dout = (~we) ? ram[addr_reg] : 0;
+ assign dout = (~we) ? ram[addr] : 0;
 endmodule
+
