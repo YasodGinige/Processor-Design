@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="590.001 ns"></ZoomEndTime>
-      <Cursor1Time time="271.000 ns"></Cursor1Time>
+      <ZoomEndTime time="656.642 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="236"></NameColumnWidth>
-      <ValueColumnWidth column_width="101"></ValueColumnWidth>
+      <NameColumnWidth column_width="250"></NameColumnWidth>
+      <ValueColumnWidth column_width="97"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="135" />
+   <WVObjectSize size="136" />
    <wvobject type="divider" fp_name="divider82">
       <obj_property name="label">MUX_A</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -549,32 +549,36 @@
       <obj_property name="label">PC</obj_property>
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject fp_name="/processor_tb/PC/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
    <wvobject fp_name="/processor_tb/PC/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PC/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
    <wvobject fp_name="/processor_tb/PC/inc" type="logic">
       <obj_property name="ElementShortName">inc</obj_property>
       <obj_property name="ObjectShortName">inc</obj_property>
    </wvobject>
-   <wvobject fp_name="/processor_tb/PC/jump" type="logic">
-      <obj_property name="ElementShortName">jump</obj_property>
-      <obj_property name="ObjectShortName">jump</obj_property>
-   </wvobject>
    <wvobject fp_name="/processor_tb/PC/Z" type="logic">
       <obj_property name="ElementShortName">Z</obj_property>
       <obj_property name="ObjectShortName">Z</obj_property>
    </wvobject>
-   <wvobject fp_name="/processor_tb/PC/pc_result" type="array">
-      <obj_property name="ElementShortName">pc_result[15:0]</obj_property>
-      <obj_property name="ObjectShortName">pc_result[15:0]</obj_property>
+   <wvobject fp_name="/processor_tb/PC/jump" type="logic">
+      <obj_property name="ElementShortName">jump</obj_property>
+      <obj_property name="ObjectShortName">jump</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PC/imem_addr" type="logic">
+      <obj_property name="ElementShortName">imem_addr</obj_property>
+      <obj_property name="ObjectShortName">imem_addr</obj_property>
    </wvobject>
    <wvobject fp_name="/processor_tb/PC/sel" type="logic">
       <obj_property name="ElementShortName">sel</obj_property>
       <obj_property name="ObjectShortName">sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PC/incValue" type="array">
+      <obj_property name="ElementShortName">incValue[15:0]</obj_property>
+      <obj_property name="ObjectShortName">incValue[15:0]</obj_property>
    </wvobject>
 </wave_config>

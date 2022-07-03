@@ -217,7 +217,7 @@ generic_reg str_pointer(
 );
 
 //PC INSTANTIATION
-PC PC(  .pc_result(A),
+program_counter PC(
         .reset(reset), 
         .clk(clk), 
         .inc(pc_inc), 

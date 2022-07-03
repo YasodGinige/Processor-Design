@@ -20,12 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module PC(pc_result, reset, clk, inc, Z, jump); //D);
-    //input       [15:0] D;
-	input      reset, clk, inc;
-    input       jump,Z;
-    
-	output reg  [15:0]  pc_result;
+module PC(
+	input      reset, 
+	input clk, 
+	input inc,
+    input       jump,
+    input       Z,
+	output reg  [15:0]  pc_result
+    );
     wire sel;
     assign sel = jump & Z;
         
@@ -37,12 +39,12 @@ module PC(pc_result, reset, clk, inc, Z, jump); //D);
     	   case(sel)
     	       1'b0:begin 
     	            if(inc)
-    	               pc_result <= pc_result + 16'b1;
-    	            else
+    	               pc_result <= pc_result + 1;
+    	            else if (inc ==0)
     	               pc_result <= pc_result;
     	            end
     	            
-    	       1'b1 : pc_result <= 4'h0003; // LOOP Start PC number
+    	       1'b1:pc_result <= 16'h0003; // LOOP Start PC number
     	   endcase
 		  end
 		end

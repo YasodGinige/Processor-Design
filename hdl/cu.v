@@ -57,6 +57,22 @@ always@(posedge clk)
             'h0:begin           
                 reset <=1;          //ACTIVE HIGH RESET
                 state <= state +1;
+                en_decAop <=0;
+                en_decBop <=0;
+                en_decCop <=0;
+                en_decAout <= 0;
+                en_decBout <= 0;
+                en_decCout <= 0;	
+                alu_ctrl <=0;
+                dmem_read <= 0;
+                dmem_write <= 0;
+                imem_read <= 0;
+                pc_inc <= 0;
+                mar_inc <=0;
+                col_zero <=0;
+                col_inc <= 0;
+                row_inc <= 0;
+                jump <= 0;
                 end
             
             // FETCH	
