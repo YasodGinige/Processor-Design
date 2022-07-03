@@ -77,21 +77,20 @@ always@(posedge clk)
             
             // FETCH	
             'h01:begin
-                reset <= 0;
-                en_decAop <= 1;
-                en_decAout <= 1;
-                alu_ctrl <= 4'b0000;
-                en_decCop <= 1;
-                en_decCout <=1;
-                state <= state +1;
+//                reset <= 0;
+//                en_decAop <= 1;
+//                en_decAout <= 1;
+//                alu_ctrl <= 4'b0000;
+//                en_decCop <= 1;
+//                en_decCout <=1;
+//                state <= state +1;
+                    reset <=0;
+                    imem_read <=1;
+                    state <= state +1;
                 end 	
             'h02:begin
                 pc_inc <=1;
-                imem_read <=1;
-                en_decAop <=0;
-                en_decAout <= 0;
-                en_decCop <=0;
-                en_decCout <=0;
+                imem_read <=0;
                 state <= state + 1;
                 end
             'h03:begin
@@ -318,17 +317,20 @@ always@(posedge clk)
                  state <= state + 1;
                  end
              'h21:begin
-                 jump <= 1;
+                 //jump <= 1;
                  en_decAout <=1;
                  en_decBout <=1;
                  alu_ctrl <= 4'b0010;
                  state <= state + 1;
                  end
              'h22:begin 
-                  jump <=0;
+                  jump <=1;
                   state <= state + 1;             
                   end               
-             'h23:state <= 1;
+             'h23:begin
+                  state <= 1;
+                  jump <=0;
+                  end
              ///////////////////////////
              //MAR INCREMENT
              'h24:begin

@@ -51,6 +51,7 @@ wire reset;
 //
 reg [15:0] ir;
 reg enable;
+reg [15:0] iram [5:0];
 //INSTRUCTION REGISTER CONNECTIONS
 wire [3:0]addrA;
 wire [3:0]addrB;
@@ -58,6 +59,7 @@ wire [3:0]addrC;
 
 // WRITE ENABLE CONNECTIONS
 wire str_pointer_wen;
+wire ir_wen;
 wire pr1_wen;
 wire pr2_wen;
 wire pr3_wen;
@@ -90,12 +92,19 @@ wire [15:0] row_B;
 wire [15:0] r1_B;
 wire [15:0] r2_B;
 
-
-
-
 //ALU CONNECTIONS
 wire Z;
 
+//MEMORY CONNECTIONS
+wire [15:0] imem_addr;
+wire [15:0] imem_dout;
+wire [15:0] imem_din;
+wire imem_wen;
+wire [15:0] dmem_addr;
+wire [15:0] dmem_dout;
+wire [15:0] dmem_din;
+wire [15:0] dmem_wen;
+wire [15:0]imem_addr_pc;
 //CONTROL UNIT INSTANTIATION
 cu cu(
     .clock_en(clock_en),
@@ -136,14 +145,14 @@ alu_16bit #(
 //DECODER C INSTANTIATION
 Decoder dec_C(
     .clk(clk),
-    .sel(ir[3:0]),
+    .sel(addrC),
     .EN_OP(en_decCop),
     .EN_OUT(en_decCout ),
     .str_pointer(str_pointer_wen),
     // mar,
     // mdr,
-    // pr1,
-    // pr2,
+    .pr1(pr1_wen ),
+    .pr2(pr2_wen ),
     .pr3(pr3_wen )
     // col,
     // row,
@@ -157,7 +166,7 @@ mux MUX_A(
           .reset(reset),
           .en_op(en_decAop ),
           .en_out(en_decAout ),
-          .sel(ir[11:8]),
+          .sel(addrA ),
           .str_pointer(str_A), 
           .pc(pc_A),                   
           .ir(ir_A),
@@ -178,7 +187,7 @@ mux MUX_B(
           .reset(reset),
           .en_op(en_decBop ),
           .en_out(en_decBout ),
-          .sel(ir[7:4]),
+          .sel(addrB),
           .str_pointer(str_B), 
           .pc(pc_B),                   
           .ir(ir_B),
@@ -193,19 +202,28 @@ mux MUX_B(
                      //  input [15:0] r2,                  
            .dout(b_bus));   
 
+//INSTRUCTION MEMORY INSTANTIATION
+imem_ram #(.DWIDTH(16), .ADDR_WIDTH(16))IMEM(
+                .data(imem_din),
+                .we(imem_wen),
+                .addr(imem_addr ),
+                .clk(clk),
+                .dout(imem_dout)
+ );
+
 //INSTRUCTION REGISTER INSTANTIATION
-/*ir_module I_REG(
-        din, 
-        clk, 
-        rst, 
-        write_en, 
-        A, 
-        B,
-        addrA, 
-        addrB, 
-        addrC,
-        opcode);
-*/
+ir_module I_REG(
+        .din(imem_dout), 
+        .clk(clk), 
+        .rst(reset), 
+        .write_en(imem_read), 
+        .A(a_bus), 
+        .B(b_bus),
+        .addrA(addrA), 
+        .addrB(addrB), 
+        .addrC(addrC)
+            );
+
 //STR POINTER INSTANTIATION
 generic_reg str_pointer(
             .clk(clk),
@@ -222,7 +240,8 @@ program_counter PC(
         .clk(clk), 
         .inc(pc_inc), 
         .Z(Z), 
-        .jump(jump)); 
+        .jump(jump),
+        .imem_addr(imem_addr_pc)); 
 
 //PR1 INSTANTIATION
 generic_reg PR1(
@@ -261,28 +280,60 @@ initial begin
 reg [15:0] c_bus_reg;
 reg [15:0] pr1_wen_reg;
 reg [15:0] pr2_wen_reg;
+reg [15:0] imem_addr_reg;
+reg [15:0] imem_din_reg;
+reg [15:0] imem_dout_reg;
+reg imem_wen_reg;
+
+integer iload_done = 0;
 
 assign c_bus = c_bus_reg;
 assign pr1_wen = pr1_wen_reg;
 assign pr2_wen = pr2_wen_reg;
+assign imem_addr = (~iload_done) ? imem_addr_reg:16'hzzzz;
+assign imem_din = imem_din_reg;
+assign imem_wen = imem_wen_reg;
+assign imem_dout = imem_dout_reg;
 
+assign imem_addr_pc = (iload_done)? imem_addr: 16'hzzzz;
+//initial begin                                      
+//    enable = 0;
+//    c_bus_reg  = 1444;
+//    pr1_wen_reg  = 1;
+//    #40
+//    c_bus_reg = 154;
+//    pr1_wen_reg  = 0;
+//    pr2_wen_reg  = 1;
+//    #40
+//    pr2_wen_reg  = 0;
+//    ir = 16'h2607;
+//    enable = 1;
+//    c_bus_reg = 16'hzzzz;
+//    #100
+//    ir = 16'd258;
+//    #100
+//    ir = 16'h1000;
+//end
 initial begin
     enable = 0;
-    c_bus_reg  = 154;
-    pr1_wen_reg  = 1;
-    #40
-    c_bus_reg = 35;
-    pr1_wen_reg  = 0;
-    pr2_wen_reg  = 1;
-    #40
-    pr2_wen_reg  = 0;
-    ir = 16'hb607;
-    enable = 1;
-    c_bus_reg = 16'hzzzz;
-    #100
-    ir = 16'd126;
+    $readmemh("imem.mem",iram); // read file from INFILE
+    imem_wen_reg = 1;       
+    imem_addr_reg = -1;
 end
 
+
+always@(posedge clk)begin
+    if(~iload_done)begin
+        imem_addr_reg = imem_addr_reg +1;
+        imem_din_reg = iram[imem_addr_reg];
+        end
+        if (imem_addr_reg == 6)begin
+            iload_done = 1;
+            enable = 1;
+            imem_addr_reg = 16'hzzzz;
+            imem_din_reg = 16'hzzzz;
+            imem_wen_reg = 16'hzzzz;
+        end
+    end
+
 endmodule
-
-

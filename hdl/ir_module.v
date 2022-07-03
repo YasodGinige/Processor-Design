@@ -20,16 +20,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ir_module(din, clk, rst, write_en, A, B,addrA, addrB, addrC,opcode);
-input       [15:0] din;
-input       rst, clk, write_en;
-
-output [3:0] addrA;
-output [3:0] addrB;
-output [3:0] addrC;
-output [3:0] opcode;
-output reg  [15:0] A;
-output reg  [15:0] B;
+module ir_module(
+input    [15:0] din,
+input    rst,
+input    clk,
+input    write_en,
+output [3:0] addrA,
+output [3:0] addrB,
+output [3:0] addrC,
+//output [3:0] opcode,
+output reg  [15:0] A,
+output reg  [15:0] B
+);
 
 reg [15:0] IR;
 
@@ -40,7 +42,7 @@ assign addrB = IR[7:4];
 assign addrC = IR[3:0]; 
 
 // opcode output
-assign opcode = IR[15:12];
+//assign opcode = IR[15:12];
 
 //Rest of the logic accomodates for reading immediate data
 	
@@ -48,7 +50,7 @@ assign opcode = IR[15:12];
     begin
     	if (rst == 1)
     		IR <= 16'b0;
-    	else if (write_en) begin
+    	else if (write_en) begin       //write at the posedge of write_en?
 				IR <= din;
 			end
 			

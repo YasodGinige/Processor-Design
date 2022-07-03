@@ -47,7 +47,7 @@ module alu_16bit #(
             endcase
     end
     
-    always@(posedge clk)begin
+    always@(dout)begin
         if(dout == 0)
             Z <= 0;
         else
