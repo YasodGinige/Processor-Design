@@ -3,89 +3,578 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="sim1_behav.wdb" id="1">
+      <db_ref path="processor_tb_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
-            <top_module name="sim1" />
+            <top_module name="processor_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="237.401 ns"></ZoomEndTime>
-      <Cursor1Time time="137.400 ns"></Cursor1Time>
+      <ZoomEndTime time="590.001 ns"></ZoomEndTime>
+      <Cursor1Time time="271.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="236"></NameColumnWidth>
-      <ValueColumnWidth column_width="113"></ValueColumnWidth>
+      <ValueColumnWidth column_width="101"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="17" />
-   <wvobject fp_name="/sim1/ir" type="array">
-      <obj_property name="ElementShortName">ir[15:0]</obj_property>
-      <obj_property name="ObjectShortName">ir[15:0]</obj_property>
+   <WVObjectSize size="135" />
+   <wvobject type="divider" fp_name="divider82">
+      <obj_property name="label">MUX_A</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#E0FFFF</obj_property>
    </wvobject>
-   <wvobject fp_name="/sim1/clk" type="logic">
+   <wvobject fp_name="/processor_tb/MUX_A/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/sim1/dut/reset" type="logic">
+   <wvobject fp_name="/processor_tb/MUX_A/reset" type="logic">
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/sim1/dut/en_decAop" type="logic">
+   <wvobject fp_name="/processor_tb/MUX_A/en_op" type="logic">
+      <obj_property name="ElementShortName">en_op</obj_property>
+      <obj_property name="ObjectShortName">en_op</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/en_out" type="logic">
+      <obj_property name="ElementShortName">en_out</obj_property>
+      <obj_property name="ObjectShortName">en_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/sel" type="array">
+      <obj_property name="ElementShortName">sel[3:0]</obj_property>
+      <obj_property name="ObjectShortName">sel[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/str_pointer" type="array">
+      <obj_property name="ElementShortName">str_pointer[15:0]</obj_property>
+      <obj_property name="ObjectShortName">str_pointer[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/pc" type="array">
+      <obj_property name="ElementShortName">pc[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pc[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/ir" type="array">
+      <obj_property name="ElementShortName">ir[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ir[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/mar" type="array">
+      <obj_property name="ElementShortName">mar[15:0]</obj_property>
+      <obj_property name="ObjectShortName">mar[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/mdr" type="array">
+      <obj_property name="ElementShortName">mdr[15:0]</obj_property>
+      <obj_property name="ObjectShortName">mdr[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/pr1" type="array">
+      <obj_property name="ElementShortName">pr1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pr1[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/pr2" type="array">
+      <obj_property name="ElementShortName">pr2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pr2[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/pr3" type="array">
+      <obj_property name="ElementShortName">pr3[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pr3[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/col" type="array">
+      <obj_property name="ElementShortName">col[15:0]</obj_property>
+      <obj_property name="ObjectShortName">col[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/row" type="array">
+      <obj_property name="ElementShortName">row[15:0]</obj_property>
+      <obj_property name="ObjectShortName">row[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/r1" type="array">
+      <obj_property name="ElementShortName">r1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">r1[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/r2" type="array">
+      <obj_property name="ElementShortName">r2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">r2[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/dout" type="array">
+      <obj_property name="ElementShortName">dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/temp" type="array">
+      <obj_property name="ElementShortName">temp[15:0]</obj_property>
+      <obj_property name="ObjectShortName">temp[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_A/temp_sel" type="array">
+      <obj_property name="ElementShortName">temp_sel[3:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_sel[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider95">
+      <obj_property name="label">MUX_B</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/en_op" type="logic">
+      <obj_property name="ElementShortName">en_op</obj_property>
+      <obj_property name="ObjectShortName">en_op</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/en_out" type="logic">
+      <obj_property name="ElementShortName">en_out</obj_property>
+      <obj_property name="ObjectShortName">en_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/sel" type="array">
+      <obj_property name="ElementShortName">sel[3:0]</obj_property>
+      <obj_property name="ObjectShortName">sel[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/str_pointer" type="array">
+      <obj_property name="ElementShortName">str_pointer[15:0]</obj_property>
+      <obj_property name="ObjectShortName">str_pointer[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/pc" type="array">
+      <obj_property name="ElementShortName">pc[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pc[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/ir" type="array">
+      <obj_property name="ElementShortName">ir[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ir[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/mar" type="array">
+      <obj_property name="ElementShortName">mar[15:0]</obj_property>
+      <obj_property name="ObjectShortName">mar[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/mdr" type="array">
+      <obj_property name="ElementShortName">mdr[15:0]</obj_property>
+      <obj_property name="ObjectShortName">mdr[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/pr1" type="array">
+      <obj_property name="ElementShortName">pr1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pr1[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/pr2" type="array">
+      <obj_property name="ElementShortName">pr2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pr2[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/pr3" type="array">
+      <obj_property name="ElementShortName">pr3[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pr3[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/col" type="array">
+      <obj_property name="ElementShortName">col[15:0]</obj_property>
+      <obj_property name="ObjectShortName">col[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/row" type="array">
+      <obj_property name="ElementShortName">row[15:0]</obj_property>
+      <obj_property name="ObjectShortName">row[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/r1" type="array">
+      <obj_property name="ElementShortName">r1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">r1[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/r2" type="array">
+      <obj_property name="ElementShortName">r2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">r2[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/dout" type="array">
+      <obj_property name="ElementShortName">dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/temp" type="array">
+      <obj_property name="ElementShortName">temp[15:0]</obj_property>
+      <obj_property name="ObjectShortName">temp[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MUX_B/temp_sel" type="array">
+      <obj_property name="ElementShortName">temp_sel[3:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_sel[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider51">
+      <obj_property name="label">CU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/ir" type="array">
+      <obj_property name="ElementShortName">ir[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ir[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/en_decAop" type="logic">
       <obj_property name="ElementShortName">en_decAop</obj_property>
       <obj_property name="ObjectShortName">en_decAop</obj_property>
    </wvobject>
-   <wvobject fp_name="/sim1/dut/en_decBop" type="logic">
+   <wvobject fp_name="/processor_tb/cu/en_decBop" type="logic">
       <obj_property name="ElementShortName">en_decBop</obj_property>
       <obj_property name="ObjectShortName">en_decBop</obj_property>
    </wvobject>
-   <wvobject fp_name="/sim1/dut/en_decCop" type="logic">
+   <wvobject fp_name="/processor_tb/cu/en_decCop" type="logic">
       <obj_property name="ElementShortName">en_decCop</obj_property>
       <obj_property name="ObjectShortName">en_decCop</obj_property>
    </wvobject>
-   <wvobject fp_name="/sim1/dut/en_decAout" type="logic">
+   <wvobject fp_name="/processor_tb/cu/en_decAout" type="logic">
       <obj_property name="ElementShortName">en_decAout</obj_property>
       <obj_property name="ObjectShortName">en_decAout</obj_property>
    </wvobject>
-   <wvobject fp_name="/sim1/dut/en_decBout" type="logic">
+   <wvobject fp_name="/processor_tb/cu/en_decBout" type="logic">
       <obj_property name="ElementShortName">en_decBout</obj_property>
       <obj_property name="ObjectShortName">en_decBout</obj_property>
    </wvobject>
-   <wvobject fp_name="/sim1/dut/en_decCout" type="logic">
+   <wvobject fp_name="/processor_tb/cu/en_decCout" type="logic">
       <obj_property name="ElementShortName">en_decCout</obj_property>
       <obj_property name="ObjectShortName">en_decCout</obj_property>
    </wvobject>
-   <wvobject fp_name="/sim1/dut/alu_ctrl" type="array">
+   <wvobject fp_name="/processor_tb/cu/alu_ctrl" type="array">
       <obj_property name="ElementShortName">alu_ctrl[3:0]</obj_property>
       <obj_property name="ObjectShortName">alu_ctrl[3:0]</obj_property>
+      <obj_property name="CustomSignalColor">#E0FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
    </wvobject>
-   <wvobject fp_name="/sim1/dut/dmem_read" type="logic">
+   <wvobject fp_name="/processor_tb/cu/dmem_read" type="logic">
       <obj_property name="ElementShortName">dmem_read</obj_property>
       <obj_property name="ObjectShortName">dmem_read</obj_property>
    </wvobject>
-   <wvobject fp_name="/sim1/dut/dmem_write" type="logic">
+   <wvobject fp_name="/processor_tb/cu/dmem_write" type="logic">
       <obj_property name="ElementShortName">dmem_write</obj_property>
       <obj_property name="ObjectShortName">dmem_write</obj_property>
    </wvobject>
-   <wvobject fp_name="/sim1/dut/imem_read" type="logic">
+   <wvobject fp_name="/processor_tb/cu/imem_read" type="logic">
       <obj_property name="ElementShortName">imem_read</obj_property>
       <obj_property name="ObjectShortName">imem_read</obj_property>
    </wvobject>
-   <wvobject fp_name="/sim1/dut/pc_inc" type="logic">
+   <wvobject fp_name="/processor_tb/cu/pc_inc" type="logic">
       <obj_property name="ElementShortName">pc_inc</obj_property>
       <obj_property name="ObjectShortName">pc_inc</obj_property>
    </wvobject>
-   <wvobject fp_name="/sim1/dut/jump" type="logic">
+   <wvobject fp_name="/processor_tb/cu/mar_inc" type="logic">
+      <obj_property name="ElementShortName">mar_inc</obj_property>
+      <obj_property name="ObjectShortName">mar_inc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/col_zero" type="logic">
+      <obj_property name="ElementShortName">col_zero</obj_property>
+      <obj_property name="ObjectShortName">col_zero</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/col_inc" type="logic">
+      <obj_property name="ElementShortName">col_inc</obj_property>
+      <obj_property name="ObjectShortName">col_inc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/row_inc" type="logic">
+      <obj_property name="ElementShortName">row_inc</obj_property>
+      <obj_property name="ObjectShortName">row_inc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/jump" type="logic">
       <obj_property name="ElementShortName">jump</obj_property>
       <obj_property name="ObjectShortName">jump</obj_property>
    </wvobject>
-   <wvobject fp_name="/sim1/dut/opcode" type="array">
+   <wvobject fp_name="/processor_tb/cu/clock_en" type="logic">
+      <obj_property name="ElementShortName">clock_en</obj_property>
+      <obj_property name="ObjectShortName">clock_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/opcode" type="array">
       <obj_property name="ElementShortName">opcode[3:0]</obj_property>
       <obj_property name="ObjectShortName">opcode[3:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/sim1/dut/state" type="array">
+   <wvobject fp_name="/processor_tb/cu/addr_A" type="array">
+      <obj_property name="ElementShortName">addr_A[3:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_A[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/addr_B" type="array">
+      <obj_property name="ElementShortName">addr_B[3:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_B[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/addr_dest" type="array">
+      <obj_property name="ElementShortName">addr_dest[3:0]</obj_property>
+      <obj_property name="ObjectShortName">addr_dest[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/state" type="array">
       <obj_property name="ElementShortName">state[31:0]</obj_property>
       <obj_property name="ObjectShortName">state[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/BUS_WIDTH" type="array">
+      <obj_property name="ElementShortName">BUS_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">BUS_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/OPCODE_LEN" type="array">
+      <obj_property name="ElementShortName">OPCODE_LEN[31:0]</obj_property>
+      <obj_property name="ObjectShortName">OPCODE_LEN[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/ADDR_AW" type="array">
+      <obj_property name="ElementShortName">ADDR_AW[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ADDR_AW[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/ADDR_BW" type="array">
+      <obj_property name="ElementShortName">ADDR_BW[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ADDR_BW[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/cu/DESTW" type="array">
+      <obj_property name="ElementShortName">DESTW[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DESTW[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider83">
+      <obj_property name="label">ALU</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#0000FF</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/alu/operand1" type="array">
+      <obj_property name="ElementShortName">operand1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">operand1[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/alu/operand2" type="array">
+      <obj_property name="ElementShortName">operand2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">operand2[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/alu/operation" type="array">
+      <obj_property name="ElementShortName">operation[3:0]</obj_property>
+      <obj_property name="ObjectShortName">operation[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/alu/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/alu/dout" type="array">
+      <obj_property name="ElementShortName">dout[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/alu/Z" type="logic">
+      <obj_property name="ElementShortName">Z</obj_property>
+      <obj_property name="ObjectShortName">Z</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/alu/DWIDTH" type="array">
+      <obj_property name="ElementShortName">DWIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DWIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/alu_ctrl" type="array">
+      <obj_property name="ElementShortName">alu_ctrl[3:0]</obj_property>
+      <obj_property name="ObjectShortName">alu_ctrl[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider151">
+      <obj_property name="label">DECODER C</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/dec_C/sel" type="array">
+      <obj_property name="ElementShortName">sel[3:0]</obj_property>
+      <obj_property name="ObjectShortName">sel[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/dec_C/EN_OP" type="logic">
+      <obj_property name="ElementShortName">EN_OP</obj_property>
+      <obj_property name="ObjectShortName">EN_OP</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/dec_C/EN_OUT" type="logic">
+      <obj_property name="ElementShortName">EN_OUT</obj_property>
+      <obj_property name="ObjectShortName">EN_OUT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/dec_C/str_pointer" type="logic">
+      <obj_property name="ElementShortName">str_pointer</obj_property>
+      <obj_property name="ObjectShortName">str_pointer</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/dec_C/mar" type="logic">
+      <obj_property name="ElementShortName">mar</obj_property>
+      <obj_property name="ObjectShortName">mar</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/dec_C/mdr" type="logic">
+      <obj_property name="ElementShortName">mdr</obj_property>
+      <obj_property name="ObjectShortName">mdr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/dec_C/pr1" type="logic">
+      <obj_property name="ElementShortName">pr1</obj_property>
+      <obj_property name="ObjectShortName">pr1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/dec_C/pr2" type="logic">
+      <obj_property name="ElementShortName">pr2</obj_property>
+      <obj_property name="ObjectShortName">pr2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/dec_C/pr3" type="logic">
+      <obj_property name="ElementShortName">pr3</obj_property>
+      <obj_property name="ObjectShortName">pr3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/dec_C/col" type="logic">
+      <obj_property name="ElementShortName">col</obj_property>
+      <obj_property name="ObjectShortName">col</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/dec_C/row" type="logic">
+      <obj_property name="ElementShortName">row</obj_property>
+      <obj_property name="ObjectShortName">row</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/dec_C/r1" type="logic">
+      <obj_property name="ElementShortName">r1</obj_property>
+      <obj_property name="ObjectShortName">r1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/dec_C/r2" type="logic">
+      <obj_property name="ElementShortName">r2</obj_property>
+      <obj_property name="ObjectShortName">r2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/dec_C/temp_sel" type="array">
+      <obj_property name="ElementShortName">temp_sel[3:0]</obj_property>
+      <obj_property name="ObjectShortName">temp_sel[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/dec_C/temp" type="array">
+      <obj_property name="ElementShortName">temp[11:0]</obj_property>
+      <obj_property name="ObjectShortName">temp[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/dec_C/out" type="array">
+      <obj_property name="ElementShortName">out[11:0]</obj_property>
+      <obj_property name="ObjectShortName">out[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider117">
+      <obj_property name="label">BUSES</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/a_bus" type="array">
+      <obj_property name="ElementShortName">a_bus[15:0]</obj_property>
+      <obj_property name="ObjectShortName">a_bus[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/b_bus" type="array">
+      <obj_property name="ElementShortName">b_bus[15:0]</obj_property>
+      <obj_property name="ObjectShortName">b_bus[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/c_bus" type="array">
+      <obj_property name="ElementShortName">c_bus[15:0]</obj_property>
+      <obj_property name="ObjectShortName">c_bus[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider118">
+      <obj_property name="label">PR1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR1/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR1/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR1/writeC" type="logic">
+      <obj_property name="ElementShortName">writeC</obj_property>
+      <obj_property name="ObjectShortName">writeC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR1/D" type="array">
+      <obj_property name="ElementShortName">D[15:0]</obj_property>
+      <obj_property name="ObjectShortName">D[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR1/A" type="array">
+      <obj_property name="ElementShortName">A[15:0]</obj_property>
+      <obj_property name="ObjectShortName">A[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR1/B" type="array">
+      <obj_property name="ElementShortName">B[15:0]</obj_property>
+      <obj_property name="ObjectShortName">B[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR1/Register" type="array">
+      <obj_property name="ElementShortName">Register[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Register[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider126">
+      <obj_property name="label">PR2</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR2/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR2/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR2/writeC" type="logic">
+      <obj_property name="ElementShortName">writeC</obj_property>
+      <obj_property name="ObjectShortName">writeC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR2/D" type="array">
+      <obj_property name="ElementShortName">D[15:0]</obj_property>
+      <obj_property name="ObjectShortName">D[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR2/A" type="array">
+      <obj_property name="ElementShortName">A[15:0]</obj_property>
+      <obj_property name="ObjectShortName">A[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR2/B" type="array">
+      <obj_property name="ElementShortName">B[15:0]</obj_property>
+      <obj_property name="ObjectShortName">B[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR2/Register" type="array">
+      <obj_property name="ElementShortName">Register[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Register[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider168">
+      <obj_property name="label">PR3</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR3/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR3/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR3/writeC" type="logic">
+      <obj_property name="ElementShortName">writeC</obj_property>
+      <obj_property name="ObjectShortName">writeC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR3/D" type="array">
+      <obj_property name="ElementShortName">D[15:0]</obj_property>
+      <obj_property name="ObjectShortName">D[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR3/A" type="array">
+      <obj_property name="ElementShortName">A[15:0]</obj_property>
+      <obj_property name="ObjectShortName">A[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR3/B" type="array">
+      <obj_property name="ElementShortName">B[15:0]</obj_property>
+      <obj_property name="ObjectShortName">B[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR3/Register" type="array">
+      <obj_property name="ElementShortName">Register[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Register[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider183">
+      <obj_property name="label">PC</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PC/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PC/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PC/inc" type="logic">
+      <obj_property name="ElementShortName">inc</obj_property>
+      <obj_property name="ObjectShortName">inc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PC/jump" type="logic">
+      <obj_property name="ElementShortName">jump</obj_property>
+      <obj_property name="ObjectShortName">jump</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PC/Z" type="logic">
+      <obj_property name="ElementShortName">Z</obj_property>
+      <obj_property name="ObjectShortName">Z</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PC/pc_result" type="array">
+      <obj_property name="ElementShortName">pc_result[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_result[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PC/sel" type="logic">
+      <obj_property name="ElementShortName">sel</obj_property>
+      <obj_property name="ObjectShortName">sel</obj_property>
    </wvobject>
 </wave_config>

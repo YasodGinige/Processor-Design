@@ -1,7 +1,7 @@
 //Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-//Date        : Sat Jul  2 18:30:17 2022
+//Date        : Sat Jul  2 21:04:42 2022
 //Host        : ransara-laptop running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -19,9 +19,10 @@ ROW
 COL
 R1
 R2 */
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=22,numReposBlks=22,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=21,numPkgbdBlks=0,bdsource=USER,\"\"\"da_clkrst_cnt\"\"\"=18,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=20,numReposBlks=20,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=20,numPkgbdBlks=0,bdsource=USER,\"\"\"\"\"da_clkrst_cnt\"\"\"\"\"=18,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
-   ();
+   (clk);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK, CLK_DOMAIN design_1_clk, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.0" *) input clk;
 
   wire [15:0]COL_0_A;
   wire [15:0]COL_0_B;
@@ -84,8 +85,8 @@ module design_1
   wire [15:0]mux_0_out;
   wire [15:0]mux_1_out;
   wire [15:0]pc_project_demo_1_PCResult;
-  wire [0:0]xlconstant_0_dout;
 
+  assign clockgen_0_clk = clk;
   design_1_COL_0_0 COL_0
        (.A(COL_0_A),
         .B(COL_0_B),
@@ -195,9 +196,6 @@ module design_1
         .operand1(mux_0_out),
         .operand2(mux_1_out),
         .operation(cu_0_alu_ctrl));
-  design_1_clockgen_0_0 clockgen_0
-       (.clk(clockgen_0_clk),
-        .enable(xlconstant_0_dout));
   design_1_cu_0_0 cu_0
        (.alu_ctrl(cu_0_alu_ctrl),
         .clk(clockgen_0_clk),
@@ -278,6 +276,4 @@ module design_1
         .row(ROW_0_B),
         .sel(ir_module_0_addrB),
         .str_pointer(R1_0_B));
-  design_1_xlconstant_0_0 xlconstant_0
-       (.dout(xlconstant_0_dout));
 endmodule

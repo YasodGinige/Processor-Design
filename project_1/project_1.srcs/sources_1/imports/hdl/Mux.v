@@ -42,11 +42,10 @@ module mux (
   
     reg [15:0] temp;
     reg [3:0] temp_sel;
-   always @ (posedge clk) begin 
-        if(en_op) begin
-          temp_sel <= sel;
-        end
-        case (temp_sel)  
+    
+   always @ (posedge en_op) begin 
+        temp_sel = sel;                //always load the sel value at a posedge of en_op,
+        case (temp_sel)                // blocking statement to use the new temp_sel value
              4'b0001 : temp <= str_pointer;  
              4'b0010 : temp <= pc;  
              4'b0011 : temp <= ir;  
@@ -58,9 +57,15 @@ module mux (
              4'b1001 : temp <= col;
              4'b1010 : temp <= row;
              4'b1011 : temp <= r1;
-             4'b1100 : temp <= r2;           
-          endcase
-        if (en_out)
-            dout <= temp; 
-    end    
+             4'b1100 : temp <= r2;
+        endcase
+/*        if (en_out)
+            dout <= temp;
+        else
+            dout <= 16'hzzzz;  */   
+    end
+    always@(posedge en_out)
+        dout <= temp;
+    //always@(negedge en_out)
+       // dout <= 16'hzzzz;    
 endmodule  

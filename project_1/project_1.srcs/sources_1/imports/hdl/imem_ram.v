@@ -32,7 +32,7 @@ module imem_ram #(parameter DWIDTH = 16, parameter ADDR_WIDTH= 16)(
  //reg [ADDR_WIDTH:0] addr_reg;
  
  initial begin
-    $readmemh("imem.mem",ram,0,65536); // read file from INFILE
+    $readmemh("imem.mem",ram,0,6); // read file from INFILE
 end
  
  always @ (posedge clk)

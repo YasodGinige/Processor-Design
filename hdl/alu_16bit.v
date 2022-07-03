@@ -43,7 +43,7 @@ module alu_16bit #(
             4'b0100 : dout = operand1 << 2;
             4'b0101 : dout = operand1 >> 4;
             4'b0110 : dout = operand1 + 1;
-            default : dout = 2'h0000;
+            default : dout = 16'hzzzz;
             endcase
     end
     

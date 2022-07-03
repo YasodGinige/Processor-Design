@@ -1,9 +1,33 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jul  2 18:30:17 2022" VIVADOVERSION="2021.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat Jul  2 21:04:42 2022" VIVADOVERSION="2021.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="xilinx.com:zc702:part0:1.4" DEVICE="7z020" NAME="design_1" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
-  <EXTERNALPORTS/>
+  <EXTERNALPORTS>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="R1_0" PORT="clk"/>
+        <CONNECTION INSTANCE="PC_0" PORT="clk"/>
+        <CONNECTION INSTANCE="ir_module_0" PORT="clk"/>
+        <CONNECTION INSTANCE="MAR_0" PORT="clk"/>
+        <CONNECTION INSTANCE="R1_2" PORT="clk"/>
+        <CONNECTION INSTANCE="R1_3" PORT="clk"/>
+        <CONNECTION INSTANCE="R1_4" PORT="clk"/>
+        <CONNECTION INSTANCE="R1_5" PORT="clk"/>
+        <CONNECTION INSTANCE="R1_9" PORT="clk"/>
+        <CONNECTION INSTANCE="R1_8" PORT="clk"/>
+        <CONNECTION INSTANCE="cu_0" PORT="clk"/>
+        <CONNECTION INSTANCE="COL_0" PORT="clk"/>
+        <CONNECTION INSTANCE="ROW_0" PORT="clk"/>
+        <CONNECTION INSTANCE="MDR_Mux_0" PORT="clk"/>
+        <CONNECTION INSTANCE="mux_0" PORT="clk"/>
+        <CONNECTION INSTANCE="mux_1" PORT="clk"/>
+        <CONNECTION INSTANCE="alu_16bit_0" PORT="clk"/>
+        <CONNECTION INSTANCE="data_ram_1" PORT="clk"/>
+        <CONNECTION INSTANCE="imem_ram_0" PORT="clk"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
 
   <EXTERNALINTERFACES/>
 
@@ -15,9 +39,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="cu_0_reset">
@@ -140,9 +164,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="cu_0_reset">
@@ -167,8 +191,8 @@
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="A" RIGHT="0" SIGIS="undef" SIGNAME="MAR_0_A">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="data_ram_1" PORT="addr"/>
             <CONNECTION INSTANCE="mux_0" PORT="mar"/>
+            <CONNECTION INSTANCE="data_ram_1" PORT="addr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="B" RIGHT="0" SIGIS="undef" SIGNAME="MAR_0_B">
@@ -186,9 +210,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="dmem_read" SIGIS="undef" SIGNAME="cu_0_dmem_read">
@@ -223,9 +247,9 @@
       <PORTS>
         <PORT DIR="O" LEFT="15" NAME="pc_result" RIGHT="0" SIGIS="undef" SIGNAME="PC_0_pc_result">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="imem_ram_0" PORT="addr"/>
             <CONNECTION INSTANCE="mux_0" PORT="pc"/>
             <CONNECTION INSTANCE="mux_1" PORT="pc"/>
+            <CONNECTION INSTANCE="imem_ram_0" PORT="addr"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="cu_0_reset">
@@ -233,9 +257,9 @@
             <CONNECTION INSTANCE="cu_0" PORT="reset"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="inc" SIGIS="undef" SIGNAME="cu_0_pc_inc">
@@ -263,9 +287,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="cu_0_reset">
@@ -303,9 +327,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="cu_0_reset">
@@ -325,8 +349,8 @@
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="A" RIGHT="0" SIGIS="undef" SIGNAME="R1_2_A">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="data_ram_1" PORT="data"/>
             <CONNECTION INSTANCE="mux_0" PORT="mdr"/>
+            <CONNECTION INSTANCE="data_ram_1" PORT="data"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="B" RIGHT="0" SIGIS="undef" SIGNAME="R1_2_B">
@@ -344,9 +368,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="cu_0_reset">
@@ -384,9 +408,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="cu_0_reset">
@@ -424,9 +448,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="cu_0_reset">
@@ -464,9 +488,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="cu_0_reset">
@@ -504,9 +528,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="cu_0_reset">
@@ -544,9 +568,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="cu_0_reset">
@@ -605,9 +629,9 @@
             <CONNECTION INSTANCE="cu_0" PORT="alu_ctrl"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="alu_16bit_0_dout">
@@ -632,52 +656,6 @@
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>
-    <MODULE COREREVISION="1" FULLNAME="/clockgen_0" HWVERSION="1.0" INSTANCE="clockgen_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="clockgen" VLNV="xilinx.com:module_ref:clockgen:1.0">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="FREQ" VALUE="100000"/>
-        <PARAMETER NAME="PHASE" VALUE="0"/>
-        <PARAMETER NAME="DUTY" VALUE="50"/>
-        <PARAMETER NAME="clk_pd" VALUE="0"/>
-        <PARAMETER NAME="clk_on" VALUE="0"/>
-        <PARAMETER NAME="clk_off" VALUE="0"/>
-        <PARAMETER NAME="quarter" VALUE="0"/>
-        <PARAMETER NAME="start_dly" VALUE="0"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_clockgen_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="I" NAME="enable" SIGIS="undef" SIGNAME="xlconstant_0_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="xlconstant_0" PORT="dout"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="O" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="R1_0" PORT="clk"/>
-            <CONNECTION INSTANCE="PC_0" PORT="clk"/>
-            <CONNECTION INSTANCE="ir_module_0" PORT="clk"/>
-            <CONNECTION INSTANCE="MAR_0" PORT="clk"/>
-            <CONNECTION INSTANCE="R1_2" PORT="clk"/>
-            <CONNECTION INSTANCE="R1_3" PORT="clk"/>
-            <CONNECTION INSTANCE="R1_4" PORT="clk"/>
-            <CONNECTION INSTANCE="R1_5" PORT="clk"/>
-            <CONNECTION INSTANCE="R1_9" PORT="clk"/>
-            <CONNECTION INSTANCE="R1_8" PORT="clk"/>
-            <CONNECTION INSTANCE="cu_0" PORT="clk"/>
-            <CONNECTION INSTANCE="COL_0" PORT="clk"/>
-            <CONNECTION INSTANCE="ROW_0" PORT="clk"/>
-            <CONNECTION INSTANCE="MDR_Mux_0" PORT="clk"/>
-            <CONNECTION INSTANCE="data_ram_1" PORT="clk"/>
-            <CONNECTION INSTANCE="imem_ram_0" PORT="clk"/>
-            <CONNECTION INSTANCE="mux_0" PORT="clk"/>
-            <CONNECTION INSTANCE="mux_1" PORT="clk"/>
-            <CONNECTION INSTANCE="alu_16bit_0" PORT="clk"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
     <MODULE COREREVISION="1" FULLNAME="/cu_0" HWVERSION="1.0" INSTANCE="cu_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="cu" VLNV="xilinx.com:module_ref:cu:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -695,9 +673,9 @@
             <CONNECTION INSTANCE="ir_module_0" PORT="A"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="cu_0_reset">
@@ -826,9 +804,9 @@
             <CONNECTION INSTANCE="cu_0" PORT="dmem_write"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="data_ram_1_dout">
@@ -855,9 +833,9 @@
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="we" SIGIS="undef"/>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="15" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="imem_ram_0_dout">
@@ -880,9 +858,9 @@
             <CONNECTION INSTANCE="imem_ram_0" PORT="dout"/>
           </CONNECTIONS>
         </PORT>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="rst" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="cu_0_reset">
@@ -932,9 +910,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="cu_0_reset">
@@ -1032,9 +1010,9 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="clockgen_0_clk">
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="clk"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" NAME="reset" POLARITY="ACTIVE_LOW" SIGIS="rst" SIGNAME="cu_0_reset">
@@ -1120,23 +1098,6 @@
         <PORT DIR="O" LEFT="15" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="mux_1_dout">
           <CONNECTIONS>
             <CONNECTION INSTANCE="alu_16bit_0" PORT="operand2"/>
-          </CONNECTIONS>
-        </PORT>
-      </PORTS>
-      <BUSINTERFACES/>
-    </MODULE>
-    <MODULE COREREVISION="7" FULLNAME="/xlconstant_0" HWVERSION="1.1" INSTANCE="xlconstant_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="xlconstant" VLNV="xilinx.com:ip:xlconstant:1.1">
-      <DOCUMENTS/>
-      <PARAMETERS>
-        <PARAMETER NAME="CONST_WIDTH" VALUE="1"/>
-        <PARAMETER NAME="CONST_VAL" VALUE="0x1"/>
-        <PARAMETER NAME="Component_Name" VALUE="design_1_xlconstant_0_0"/>
-        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
-      </PARAMETERS>
-      <PORTS>
-        <PORT DIR="O" LEFT="0" NAME="dout" RIGHT="0" SIGIS="undef" SIGNAME="xlconstant_0_dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="clockgen_0" PORT="enable"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>

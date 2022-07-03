@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../hdl/Decoder.v" \
+"../../../../project_1.srcs/sources_1/imports/hdl/Mux.v" \
+"../../../../../hdl/R1.v" \
+"../../../../../hdl/alu_16bit.v" \
+"../../../../../hdl/cu.v" \
+"../../../../project_1.srcs/sim_1/new/processor.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

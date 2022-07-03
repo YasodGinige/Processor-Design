@@ -35,7 +35,13 @@ module PC(pc_result, reset, clk, inc, Z, jump); //D);
     		pc_result <= 16'b0;
     	else begin
     	   case(sel)
-    	       1'b0 : pc_result <= pc_result + 16'b1;
+    	       1'b0:begin 
+    	            if(inc)
+    	               pc_result <= pc_result + 16'b1;
+    	            else
+    	               pc_result <= pc_result;
+    	            end
+    	            
     	       1'b1 : pc_result <= 4'h0003; // LOOP Start PC number
     	   endcase
 		  end

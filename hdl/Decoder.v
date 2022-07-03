@@ -21,6 +21,7 @@
 
 
 module Decoder(
+    input clk,
     input [3:0]sel,
     input EN_OP,
     input EN_OUT,
@@ -50,27 +51,27 @@ module Decoder(
     assign r1 = out[10];
     assign r2 = out[11];
     
-    always@(*)
-    begin
-    if (EN_OP==1)
-        temp_sel = sel;
-    begin
-    case (temp_sel)
-      4'b0001: temp=12'b000000000001;
-      4'b0100: temp=12'b000000001000;
-      4'b0101: temp=12'b000000010000;
-      4'b0110: temp=12'b000000100000;
-      4'b0111: temp=12'b000001000000;
-      4'b1000: temp=12'b000010000000;
-      4'b1001: temp=12'b000100000000;
-      4'b1010: temp=12'b001000000000;
-      4'b1011: temp=12'b010000000000;
-      4'b1100: temp=12'b100000000000;
-    endcase
-    end
-    if (EN_OUT==1)begin
-        out = temp;
-    end
-    
-    end
+    always@(posedge clk)
+        begin
+            if (EN_OP==1)
+                temp_sel = sel;
+        
+        case (temp_sel)
+          4'b0001: temp=12'b000000000001;
+          4'b0100: temp=12'b000000001000;
+          4'b0101: temp=12'b000000010000;
+          4'b0110: temp=12'b000000100000;
+          4'b0111: temp=12'b000001000000;
+          4'b1000: temp=12'b000010000000;
+          4'b1001: temp=12'b000100000000;
+          4'b1010: temp=12'b001000000000;
+          4'b1011: temp=12'b010000000000;
+          4'b1100: temp=12'b100000000000;
+          default: temp=12'b000000000000;
+        endcase
+        if (EN_OUT==1)
+            out = temp;
+        else
+            out = 12'h0000;      
+        end
 endmodule
