@@ -2,8 +2,8 @@
 2020.2
 Oct 19 2021
 03:16:22
-C:/Users/menuw/Documents/Processor-Design/hdl/Decoder.v,1656922825,verilog,,C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sources_1/new/MAR.v,,Decoder,,,,,,,,
-C:/Users/menuw/Documents/Processor-Design/hdl/MDR_Mux.v,1656948119,verilog,,C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sources_1/imports/hdl/Mux.v,,MDR_Mux,,,,,,,,
+C:/Users/menuw/Documents/Processor-Design/hdl/Decoder.v,1656955347,verilog,,C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sources_1/new/MAR.v,,Decoder,,,,,,,,
+C:/Users/menuw/Documents/Processor-Design/hdl/MDR_Mux.v,1656957230,verilog,,C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sources_1/imports/hdl/Mux.v,,MDR_Mux,,,,,,,,
 C:/Users/menuw/Documents/Processor-Design/hdl/R1.v,1656781907,verilog,,C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sources_1/new/ROW.v,,generic_reg,,,,,,,,
 C:/Users/menuw/Documents/Processor-Design/hdl/alu_16bit.v,1656922072,verilog,,C:/Users/menuw/Documents/Processor-Design/hdl/cu.v,,alu_16bit,,,,,,,,
 C:/Users/menuw/Documents/Processor-Design/hdl/cu.v,1656947986,verilog,,C:/Users/menuw/Documents/Processor-Design/hdl/data_ram.v,,cu,,,,,,,,

@@ -24,10 +24,12 @@ module MDR_Mux(
         input dmem_read,
         input [15:0] C_Bus,
         input [15:0] Mem_Data_Bus,
-        output reg[15:0] MDR_in);
+        output /*reg*/[15:0] MDR_in);
     
-        always @(posedge dmem_read)
+    assign MDR_in = (dmem_read) ? Mem_Data_Bus[7:0]:C_Bus;
+        /*always @(posedge dmem_read)
                 MDR_in <= Mem_Data_Bus[7:0]; 
         always@(negedge dmem_read)
                 MDR_in <= C_Bus;//if load is high                            
+        */
 endmodule

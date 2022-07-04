@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="processor_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="processor_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="2,218.200 ns"></ZoomStartTime>
+      <ZoomEndTime time="3,043.018 ns"></ZoomEndTime>
+      <Cursor1Time time="2,760.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="249"></NameColumnWidth>
+      <ValueColumnWidth column_width="105"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject fp_name="/processor_tb/R2/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MDR/Register" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Register[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Register[15:0]</obj_property>
+      <obj_property name="label">MDR_DATA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MAR/Register" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Register[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Register[15:0]</obj_property>
+      <obj_property name="label">MAR_DATA</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/I_REG/IR" type="array">
+      <obj_property name="ElementShortName">IR[15:0]</obj_property>
+      <obj_property name="ObjectShortName">IR[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/str_pointer/Register" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Register[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Register[15:0]</obj_property>
+      <obj_property name="label">STR_POINTER</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PC/imem_addr" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">imem_addr[15:0]</obj_property>
+      <obj_property name="ObjectShortName">imem_addr[15:0]</obj_property>
+      <obj_property name="label">imem_addr/PC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR1/Register" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Register[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Register[15:0]</obj_property>
+      <obj_property name="label">PR1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR2/Register" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Register[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Register[15:0]</obj_property>
+      <obj_property name="label">PR2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PR3/Register" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Register[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Register[15:0]</obj_property>
+      <obj_property name="label">PR3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/COL/Register" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Register[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Register[15:0]</obj_property>
+      <obj_property name="label">COL</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/ROW/Register" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Register[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Register[15:0]</obj_property>
+      <obj_property name="label">ROW</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/R1/Register" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Register[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Register[15:0]</obj_property>
+      <obj_property name="label">R1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/R2/Register" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">Register[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Register[15:0]</obj_property>
+      <obj_property name="label">R2</obj_property>
+   </wvobject>
+</wave_config>

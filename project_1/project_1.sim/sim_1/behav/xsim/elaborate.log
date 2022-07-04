@@ -8,4 +8,22 @@ WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 8 fo
 WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 1 for port 'we' [C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sim_1/new/processor.v:230]
 WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 8 for port 'dout' [C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sim_1/new/processor.v:233]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.cu
+Compiling module xil_defaultlib.alu_16bit
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.mux
+Compiling module xil_defaultlib.imem_ram(DEPTH=21)
+Compiling module xil_defaultlib.data_ram(DWIDTH=8,DEPTH=49)
+Compiling module xil_defaultlib.MDR_Mux
+Compiling module xil_defaultlib.generic_reg
+Compiling module xil_defaultlib.MAR
+Compiling module xil_defaultlib.ir_module
+Compiling module xil_defaultlib.program_counter
+Compiling module xil_defaultlib.COL
+Compiling module xil_defaultlib.ROW
+Compiling module xil_defaultlib.processor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot processor_tb_behav

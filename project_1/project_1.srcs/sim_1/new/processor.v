@@ -187,10 +187,10 @@ mux MUX_A(
           .pr1(pr1_A),
           .pr2(pr2_A),
           .pr3(pr3_A),
-                     //  input [15:0] col,
-                     //  input [15:0] row,
-                     //  input [15:0] r1,
-                     //  input [15:0] r2,                  
+          .col(col_A),
+          .row(row_A),
+          .r1(r1_A),
+          .r2(r2_A),                  
            .dout(a_bus));   
 
 //MUX A INSTANTIATION
@@ -208,10 +208,10 @@ mux MUX_B(
           .pr1(pr1_B),
           .pr2(pr2_B),
           .pr3(pr3_B),
-                     //  input [15:0] col,
-                     //  input [15:0] row,
-                     //  input [15:0] r1,
-                     //  input [15:0] r2,                  
+          .col(col_B ),
+          .row(row_B),
+          .r1(r1_B),
+          .r2(r2_B),                  
            .dout(b_bus));   
 
 //INSTRUCTION MEMORY INSTANTIATION

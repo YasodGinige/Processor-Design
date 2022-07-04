@@ -40,16 +40,16 @@ module Decoder(
     reg [3:0]temp_sel;
     reg [11:0] temp;
     reg [11:0] out;
-    assign str_pointer = out[0];
-    assign mar = out[3];
-    assign mdr = out[4];
-    assign pr1 = out[5];
-    assign pr2 = out[6];
-    assign pr3 = out[7];
-    assign col = out[8];
-    assign row = out[9];
-    assign r1 = out[10];
-    assign r2 = out[11];
+    assign str_pointer = out[0];//1
+    assign mar = out[3];        //4
+    assign mdr = out[4];        //5
+    assign pr1 = out[5];        //6
+    assign pr2 = out[6];        //7
+    assign pr3 = out[7];        //8
+    assign col = out[8];        //9
+    assign row = out[9];        //a
+    assign r1 = out[10];        //b
+    assign r2 = out[11];        //c
     
     always@(posedge EN_OUT)begin
           case (temp_sel)
