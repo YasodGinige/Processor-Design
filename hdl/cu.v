@@ -116,10 +116,10 @@ always@(posedge clk)
                     'h9:state<='h1a;    //STORE
                     'ha:state<='h1c;    //MOVE
                     'hb:state<='h1f;    //JUMPNZ
-                    'hc:state<='h24;    //MAR INCREMENT
-                    'hd:state<='h26;    //COL INCREMENT
-                    'he:state<='h28;    //ROW INCREMENT
-                    'hf:state<='h0b;    //END
+                    'hc:state<='h25;    //MAR INCREMENT
+                    'hd:state<='h27;    //COL INCREMENT
+                    'he:state<='h29;    //ROW INCREMENT
+                    'hf:state<='h2b;    //END
                     
                     
                     
@@ -156,10 +156,10 @@ always@(posedge clk)
                  end  
              
              //LOAD~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-             //'h09:begin
-             //    dmem_read <=1;
-             //    state <= state +1;
-             //    end
+             'h09:begin
+                 dmem_read <=1;
+                 state <= state +1;
+                 end
              'h0a:begin
                  dmem_read <=0;
                  state <=1;
@@ -348,40 +348,41 @@ always@(posedge clk)
              
              ///////////////////////////
              //MAR INCREMENT
-             //'h24:begin
-             //    mar_inc <=1;
-             //    state <= state + 1;
-             //    end
              'h25:begin
+                 mar_inc <=1;
+                 state <= state + 1;
+                 end
+                 
+             'h26:begin
                  mar_inc <= 0;
                  state <= 1;
              end
              
              //COL INCREMENT
-             'h26:begin
+             'h27:begin
                  col_inc <=1;
                  state <= state + 1;
                  end
-             'h27:begin
+             'h28:begin
                  col_inc <= 0;
                  state <= 1;
              end
              
              //ROW INCREMENT
-             'h28:begin
+             'h29:begin
                  row_inc <=1;
                  state <= state + 1;
                  col_zero <=1;
                  end
                  
-             'h29:begin
+             'h2a:begin
                  row_inc <= 0;
                  col_zero <= 0;
                  state <= 1;
                  state <= 1;
              end
             
-            'h2a:begin
+            'h2b:begin
                 clock_en <=0;
             end
              

@@ -24,6 +24,7 @@ module processor_tb(
     );
 
 parameter LEN_IRAM = 10;
+parameter LEN_DRAM = 65536;
 reg clk;
 
 wire [15:0] c_bus;
@@ -54,6 +55,7 @@ wire [15:0] irtocu;
 reg [15:0] ir;
 reg enable;
 reg [15:0] iram [LEN_IRAM:0];
+reg [7:0] dram [LEN_DRAM:0];
 //INSTRUCTION REGISTER CONNECTIONS
 wire [3:0]addrA;
 wire [3:0]addrB;
@@ -65,6 +67,8 @@ wire ir_wen;
 wire pr1_wen;
 wire pr2_wen;
 wire pr3_wen;
+wire mar_wen;
+wire mdr_wen;
 
 //A BUS CONNECTIONS
 wire [15:0] str_A;
@@ -106,8 +110,8 @@ wire [15:0] dmem_addr;
 wire [15:0] dmem_dout;
 wire [15:0] dmem_din;
 wire [15:0] dmem_wen;
-wire [15:0]imem_addr_pc;
-
+wire [15:0] imem_addr_pc;
+wire [15:0] mdr_din;
 
 //CONTROL UNIT INSTANTIATION
 cu cu(
@@ -215,6 +219,41 @@ imem_ram #(.DWIDTH(16), .ADDR_WIDTH(16))IMEM(
                 .dout(imem_dout)
  );
 
+//DATA MEMORY INSTANTIATION
+
+dmem_ram #(.DWIDTH(8), .ADDR_WIDTH(16))DMEM(
+            .din(mdr_A ),
+            .we(dmem_write),
+            .addr(mar_A ),
+            .clk(),
+            .dout()
+);
+
+MDR_Mux mdr_mux( 
+                .dmem_read(dmem_read),           //read from dmem, dmem_dout
+                .C_Bus(c_bus),
+                .Mem_Data_Bus(dmem_dout),
+                .MDR_in(mdr_din)
+        );
+        
+generic_reg MDR(
+                .clk(clk),
+                .writeC(mdr_wen),
+                .D(mdr_din),
+                .A(mdr_A),
+                .B(mdr_B)
+      
+        );
+
+MAR MAR( .clk(clk), 
+            .rst(reset),
+            .writeC(mar),
+            .D(c_bus),
+            .inc(mar_inc),
+            .A(mar_A),
+            .B(mar_B)
+            );
+            
 //INSTRUCTION REGISTER INSTANTIATION
 ir_module I_REG(
         .din(imem_dout), 
