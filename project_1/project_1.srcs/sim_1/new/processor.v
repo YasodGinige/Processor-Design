@@ -23,8 +23,8 @@
 module processor_tb(
     );
 
-parameter LEN_IRAM = 10;
-parameter LEN_DRAM = 65536;
+parameter LEN_IRAM = 13;
+parameter LEN_DRAM = 14;
 reg clk;
 
 wire [15:0] c_bus;
@@ -157,8 +157,8 @@ Decoder dec_C(
     .EN_OP(en_decCop),
     .EN_OUT(en_decCout ),
     .str_pointer(str_pointer_wen),
-    // mar,
-    // mdr,
+    .mar(mar_wen),
+    .mdr(mdr_wen),
     .pr1(pr1_wen ),
     .pr2(pr2_wen ),
     .pr3(pr3_wen )
@@ -179,7 +179,7 @@ mux MUX_A(
           .pc(pc_A),                   
           .ir(ir_A),
           .mar(mar_A),                 
-                     //  input [15:0] mdr,
+          .mdr(mdr_B),
           .pr1(pr1_A),
           .pr2(pr2_A),
           .pr3(pr3_A),
@@ -200,7 +200,7 @@ mux MUX_B(
           .pc(pc_B),                   
           .ir(ir_B),
           .mar(mar_B),                 
-                     //  input [15:0] mdr,
+          .mdr(mdr_B),
           .pr1(pr1_B),
           .pr2(pr2_B),
           .pr3(pr3_B),
@@ -211,7 +211,7 @@ mux MUX_B(
            .dout(b_bus));   
 
 //INSTRUCTION MEMORY INSTANTIATION
-imem_ram #(.DWIDTH(16), .ADDR_WIDTH(16))IMEM(
+imem_ram #(.DWIDTH(16), .ADDR_WIDTH(16), .DEPTH(LEN_IRAM))IMEM(
                 .din(imem_din),
                 .we(imem_wen),
                 .addr(imem_addr ),
@@ -221,12 +221,12 @@ imem_ram #(.DWIDTH(16), .ADDR_WIDTH(16))IMEM(
 
 //DATA MEMORY INSTANTIATION
 
-dmem_ram #(.DWIDTH(8), .ADDR_WIDTH(16))DMEM(
-            .din(mdr_A ),
-            .we(dmem_write),
-            .addr(mar_A ),
-            .clk(),
-            .dout()
+data_ram #(.DWIDTH(8), .ADDR_WIDTH(16), .DEPTH(LEN_DRAM))DMEM(
+            .din(dmem_din ),
+            .we(dmem_wen),
+            .addr(dmem_addr ),
+            .clk(clk),
+            .dout(dmem_dout)
 );
 
 MDR_Mux mdr_mux( 
@@ -247,7 +247,7 @@ generic_reg MDR(
 
 MAR MAR( .clk(clk), 
             .rst(reset),
-            .writeC(mar),
+            .writeC(mar_wen),
             .D(c_bus),
             .inc(mar_inc),
             .A(mar_A),
@@ -326,10 +326,14 @@ reg [15:0] pr2_wen_reg;
 reg [15:0] imem_addr_reg;
 reg [15:0] imem_din_reg;
 reg [15:0] imem_dout_reg;
+
+reg [15:0] dmem_addr_reg;
+reg [7:0] dmem_din_reg;
+reg dmem_wen_reg;
 reg imem_wen_reg;
 
 reg iload_done = 0;
-
+reg dload_done = 0;
 //assign c_bus = c_bus_reg;
 //assign pr1_wen = pr1_wen_reg;
 //assign pr2_wen = pr2_wen_reg;
@@ -338,6 +342,11 @@ assign imem_din = imem_din_reg;
 //assign imem_wen = (~iload_done) ? imem_wen_reg:(~imem_read);
 assign imem_wen = imem_wen_reg;
 
+assign dmem_addr = (~dload_done) ? dmem_addr_reg:mar_A;
+assign dmem_din = (~dload_done) ? dmem_din_reg : mdr_A;
+assign dmem_wen = (~dload_done) ? dmem_wen_reg : dmem_write;
+
+//assign enable = dload_done && iload_done;
 //assign imem_addr_pc = (iload_done)? imem_addr: 16'hzzzz;
 //initial begin                                      
 //    enable = 0;
@@ -360,8 +369,11 @@ assign imem_wen = imem_wen_reg;
 initial begin
     enable = 0;
     $readmemh("imem.mem",iram); // read file from INFILE
+    $readmemh("dmem_test.mem",dram);
     imem_wen_reg = 1;       
     imem_addr_reg = -1;
+    dmem_addr_reg = -1;
+    dmem_wen_reg = 1;
 end
 
 
@@ -372,11 +384,24 @@ always@(posedge clk)begin
         end
         if (imem_addr_reg == LEN_IRAM+1)begin        //array length counted from 1
             iload_done = 1;
-            enable = 1;
+//            enable = 1;
             imem_addr_reg = 16'hzzzz;
             imem_din_reg = 16'hzzzz;
             imem_wen_reg = 16'h0000;
             end
     end
 
+always@(posedge clk)begin
+    if(~dload_done)begin
+        dmem_addr_reg = dmem_addr_reg +1;
+        dmem_din_reg = dram[dmem_addr_reg];
+        end
+        if(dmem_addr_reg == LEN_DRAM+1)begin
+            dload_done = 1;
+            enable = 1;
+            dmem_addr_reg = 16'hzzzz;
+            dmem_din_reg = 16'hzzzz;
+            dmem_wen_reg = 16'h0000;
+        end
+    end
 endmodule

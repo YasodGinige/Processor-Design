@@ -19,7 +19,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module imem_ram #(parameter DWIDTH = 16, parameter ADDR_WIDTH= 16)(
+module imem_ram #(parameter DWIDTH = 16, parameter ADDR_WIDTH= 16, DEPTH = 20)(
  input [DWIDTH-1:0] din,
  input [ADDR_WIDTH-1:0] addr,
  input we,clk,
@@ -27,7 +27,7 @@ module imem_ram #(parameter DWIDTH = 16, parameter ADDR_WIDTH= 16)(
  );
 
  //parameter DEPTH = 1<< ADDR_WIDTH; 
- reg [15:0] ram [10:0];
+ reg [15:0] ram [DEPTH:0];
  //reg [ADDR_WIDTH:0] addr_reg;
 // initial begin
 //    $readmemh("imem.mem",ram,0,6); // read file from INFILE

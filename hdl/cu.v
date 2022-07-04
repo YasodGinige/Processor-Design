@@ -158,10 +158,14 @@ always@(posedge clk)
              //LOAD~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
              'h09:begin
                  dmem_read <=1;
+                 en_decCop <=1;
+                 en_decCout <=1;
                  state <= state +1;
                  end
              'h0a:begin
                  dmem_read <=0;
+                 en_decCop <=0;
+                 en_decCout <=0;
                  state <=1;
                  end
                  

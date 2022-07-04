@@ -19,16 +19,16 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module data_ram #(parameter DWIDTH = 16, parameter ADDR_WIDTH= 16)(
- input [DWIDTH-1:0] data,
+module data_ram #(parameter DWIDTH = 16, parameter ADDR_WIDTH= 16, parameter DEPTH = 65535)(
+ input [DWIDTH-1:0] din,
  input [ADDR_WIDTH-1:0] addr,
  
  input we,clk,
- output [DWIDTH-1:0] dout
+ output reg [DWIDTH-1:0] dout
  );
 
 // parameter DEPTH = 1<< ADDR_WIDTH; 
- reg [255 :0] ram [65536:0];
+ reg [7:0] ram [DEPTH:0];
  //reg [ADDR_WIDTH:0] addr_reg;
   initial begin
     $readmemh("dmem.mem",ram,0,6); // read file from INFILE
@@ -36,13 +36,16 @@ end
 
  always @ (posedge clk)
  begin
-  if(we)
-   ram[addr]<=data;
+  if(we)begin
+   ram[addr]<=din;
+   dout <= 16'hzzzz;
+  end
   else
    //addr_reg<=addr;
    ram[addr] <= ram[addr];
+   dout <= ram[addr];
  end
 
- assign dout = (~we) ? ram[addr] : 0;
+// assign dout = (~we) ? ram[addr] : 0;
 endmodule
 

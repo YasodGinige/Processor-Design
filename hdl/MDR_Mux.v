@@ -27,7 +27,7 @@ module MDR_Mux(
         output reg[15:0] MDR_in);
     
         always @(posedge dmem_read)
-                MDR_in <= Mem_Data_Bus; 
+                MDR_in <= Mem_Data_Bus[7:0]; 
         always@(negedge dmem_read)
                 MDR_in <= C_Bus;//if load is high                            
 endmodule

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="processor_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="processor_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="2,676.584 ns"></ZoomEndTime>
+      <Cursor1Time time="300.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="249"></NameColumnWidth>
+      <ValueColumnWidth column_width="113"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="22" />
+   <wvobject type="divider" fp_name="divider370">
+      <obj_property name="label">MAR</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MAR/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MAR/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MAR/writeC" type="logic">
+      <obj_property name="ElementShortName">writeC</obj_property>
+      <obj_property name="ObjectShortName">writeC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MAR/D" type="array">
+      <obj_property name="ElementShortName">D[15:0]</obj_property>
+      <obj_property name="ObjectShortName">D[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MAR/inc" type="logic">
+      <obj_property name="ElementShortName">inc</obj_property>
+      <obj_property name="ObjectShortName">inc</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MAR/A" type="array">
+      <obj_property name="ElementShortName">A[15:0]</obj_property>
+      <obj_property name="ObjectShortName">A[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MAR/B" type="array">
+      <obj_property name="ElementShortName">B[15:0]</obj_property>
+      <obj_property name="ObjectShortName">B[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MAR/Register" type="array">
+      <obj_property name="ElementShortName">Register[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Register[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider751">
+      <obj_property name="label">MDR</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MDR/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MDR/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MDR/writeC" type="logic">
+      <obj_property name="ElementShortName">writeC</obj_property>
+      <obj_property name="ObjectShortName">writeC</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MDR/D" type="array">
+      <obj_property name="ElementShortName">D[15:0]</obj_property>
+      <obj_property name="ObjectShortName">D[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MDR/A" type="array">
+      <obj_property name="ElementShortName">A[15:0]</obj_property>
+      <obj_property name="ObjectShortName">A[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MDR/B" type="array">
+      <obj_property name="ElementShortName">B[15:0]</obj_property>
+      <obj_property name="ObjectShortName">B[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/MDR/Register" type="array">
+      <obj_property name="ElementShortName">Register[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Register[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider759">
+      <obj_property name="label">MDR_MUX</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/mdr_mux/dmem_read" type="logic">
+      <obj_property name="ElementShortName">dmem_read</obj_property>
+      <obj_property name="ObjectShortName">dmem_read</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/mdr_mux/C_Bus" type="array">
+      <obj_property name="ElementShortName">C_Bus[15:0]</obj_property>
+      <obj_property name="ObjectShortName">C_Bus[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/mdr_mux/Mem_Data_Bus" type="array">
+      <obj_property name="ElementShortName">Mem_Data_Bus[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Mem_Data_Bus[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/mdr_mux/MDR_in" type="array">
+      <obj_property name="ElementShortName">MDR_in[15:0]</obj_property>
+      <obj_property name="ObjectShortName">MDR_in[15:0]</obj_property>
+   </wvobject>
+</wave_config>
