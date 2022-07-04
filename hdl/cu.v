@@ -130,32 +130,35 @@ always@(posedge clk)
             'h05:begin
                  en_decAop <= 1;
                  en_decCop <= 1;
+                 //imem_read <= 1;
                  state <= state + 1;
                  end
              'h06:begin
+                 imem_read <= 1;
                  en_decAop <= 0;
                  en_decCop <= 0;
-                 imem_read <= 1;
                  state <= state + 1;
                  end
                  
              'h07:begin
+                 imem_read <=0;
                  en_decAout <= 1;
                  en_decCout <= 1;
-                 alu_ctrl  <= 4'b0000;
-                 imem_read <=0;
+                 //pc_inc <= 1;
                  state <= state + 1;
                  end
              'h08:begin
+                 en_decAout <= 0;
+                 en_decCout <= 0;
                  pc_inc <= 1;
-                 state <= 1;
-                 end
+                 state <= 1; 
+                 end  
              
              //LOAD~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-             'h09:begin
-                 dmem_read <=1;
-                 state <= state +1;
-                 end
+             //'h09:begin
+             //    dmem_read <=1;
+             //    state <= state +1;
+             //    end
              'h0a:begin
                  dmem_read <=0;
                  state <=1;

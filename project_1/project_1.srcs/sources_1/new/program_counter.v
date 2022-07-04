@@ -35,7 +35,8 @@ module program_counter(
     
 always@(posedge inc)
     begin
-    incValue = imem_addr + 1;
+    //incValue = imem_addr + 1;
+    imem_addr = imem_addr +1;
 end
 
 always@(posedge sel)begin
@@ -45,9 +46,9 @@ always@(posedge sel)begin
     
 always@(posedge clk)begin
     if(reset)
-        imem_addr = 16'hzzzz;
-    else
-        imem_addr = incValue;
+        imem_addr = 16'h0000;           //might have to check
+    //else
+    //    imem_addr = incValue;
     //if(sel == 0)
         //imem_addr = incValue;
     //if(sel == 1)begin

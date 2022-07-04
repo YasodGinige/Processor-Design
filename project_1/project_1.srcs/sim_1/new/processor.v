@@ -48,6 +48,7 @@ wire en_decCop;
 wire en_decBop;
 wire en_decAop;
 wire reset;
+wire [15:0] irtocu;
 //
 reg [15:0] ir;
 reg enable;
@@ -105,6 +106,8 @@ wire [15:0] dmem_dout;
 wire [15:0] dmem_din;
 wire [15:0] dmem_wen;
 wire [15:0]imem_addr_pc;
+
+
 //CONTROL UNIT INSTANTIATION
 cu cu(
     .clock_en(clock_en),
@@ -125,7 +128,7 @@ cu cu(
     .en_decAout(en_decAout),
     .en_decAop(en_decAop),
     .reset(reset),
-    .ir(ir),
+    .ir(irtocu),
     .clk(clk),
     .enable(enable)  
 );
@@ -204,7 +207,7 @@ mux MUX_B(
 
 //INSTRUCTION MEMORY INSTANTIATION
 imem_ram #(.DWIDTH(16), .ADDR_WIDTH(16))IMEM(
-                .data(imem_din),
+                .din(imem_din),
                 .we(imem_wen),
                 .addr(imem_addr ),
                 .clk(clk),
@@ -217,8 +220,8 @@ ir_module I_REG(
         .clk(clk), 
         .rst(reset), 
         .write_en(imem_read), 
-        .A(a_bus), 
-        .B(b_bus),
+        .A(ir_A ), 
+        .B(irtocu),
         .addrA(addrA), 
         .addrB(addrB), 
         .addrC(addrC)
@@ -285,17 +288,17 @@ reg [15:0] imem_din_reg;
 reg [15:0] imem_dout_reg;
 reg imem_wen_reg;
 
-integer iload_done = 0;
+reg iload_done = 0;
 
-assign c_bus = c_bus_reg;
-assign pr1_wen = pr1_wen_reg;
-assign pr2_wen = pr2_wen_reg;
-assign imem_addr = (~iload_done) ? imem_addr_reg:16'hzzzz;
+//assign c_bus = c_bus_reg;
+//assign pr1_wen = pr1_wen_reg;
+//assign pr2_wen = pr2_wen_reg;
+assign imem_addr = (~iload_done) ? imem_addr_reg:imem_addr_pc;
 assign imem_din = imem_din_reg;
+//assign imem_wen = (~iload_done) ? imem_wen_reg:(~imem_read);
 assign imem_wen = imem_wen_reg;
-assign imem_dout = imem_dout_reg;
 
-assign imem_addr_pc = (iload_done)? imem_addr: 16'hzzzz;
+//assign imem_addr_pc = (iload_done)? imem_addr: 16'hzzzz;
 //initial begin                                      
 //    enable = 0;
 //    c_bus_reg  = 1444;
@@ -332,8 +335,8 @@ always@(posedge clk)begin
             enable = 1;
             imem_addr_reg = 16'hzzzz;
             imem_din_reg = 16'hzzzz;
-            imem_wen_reg = 16'hzzzz;
-        end
+            imem_wen_reg = 16'h0000;
+            end
     end
 
 endmodule

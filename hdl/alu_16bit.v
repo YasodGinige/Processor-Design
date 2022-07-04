@@ -33,8 +33,7 @@ module alu_16bit #(
     
     
     
-    always@(posedge clk) begin
-        
+    always@(*) begin        
         case(operation)
             4'b0000 : dout = operand1;
             4'b0001 : dout = operand1 + operand2;
@@ -45,8 +44,7 @@ module alu_16bit #(
             4'b0110 : dout = operand1 + 1;
             default : dout = 16'hzzzz;
             endcase
-    end
-    
+    end   
     always@(dout)begin
         if(dout == 0)
             Z <= 0;

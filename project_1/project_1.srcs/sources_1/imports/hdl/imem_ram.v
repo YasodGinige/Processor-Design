@@ -20,10 +20,10 @@
 
 
 module imem_ram #(parameter DWIDTH = 16, parameter ADDR_WIDTH= 16)(
- input [DWIDTH-1:0] data,
+ input [DWIDTH-1:0] din,
  input [ADDR_WIDTH-1:0] addr,
  input we,clk,
- output [DWIDTH-1:0] dout
+ output reg [DWIDTH-1:0] dout
  );
 
  //parameter DEPTH = 1<< ADDR_WIDTH; 
@@ -35,13 +35,16 @@ module imem_ram #(parameter DWIDTH = 16, parameter ADDR_WIDTH= 16)(
  
  always @ (posedge clk)
  begin
-  if(we)
-   ram[addr]<=data;
+  if(we==1)begin
+   ram[addr]<=din;
+   dout <= 16'hzzzz;
+   end
   else
    //addr_reg<=addr;
    ram[addr] <= ram[addr];
+   dout <= ram[addr];
  end
 
- assign dout = (~we) ? ram[addr] : 0;
+ //assign dout = (~we) ? ram[addr] : 0;
 endmodule
 

@@ -50,14 +50,14 @@ assign addrC = IR[3:0];
     begin
     	if (rst == 1)
     		IR <= 16'b0;
-    	else if (write_en) begin       //write at the posedge of write_en?
-				IR <= din;
-			end
-			
-    	else begin                 //din is from instruction memory, if not in reset the    
-		    A <= IR;
-			B <= IR;
-		end
-		$display("IR=%b",IR);
     end
+    	
+    always@(posedge write_en) begin       //write at the posedge of write_en?
+				IR = din;
+				A = IR;
+                B = IR;
+                $display("IR=%h",IR);
+			end
+			                //din is from instruction memory, if not in reset the    
+	
 endmodule

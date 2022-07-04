@@ -45,27 +45,31 @@ module mux (
     
    always @ (posedge en_op) begin 
         temp_sel = sel;                //always load the sel value at a posedge of en_op,
-        case (temp_sel)                // blocking statement to use the new temp_sel value
-             4'b0001 : temp <= str_pointer;  
-             4'b0010 : temp <= pc;  
-             4'b0011 : temp <= ir;  
-             4'b0100 : temp <= mar;
-             4'b0101 : temp <= mdr;
-             4'b0110 : temp <= pr1;
-             4'b0111 : temp <= pr2;
-             4'b1000 : temp <= pr3;
-             4'b1001 : temp <= col;
-             4'b1010 : temp <= row;
-             4'b1011 : temp <= r1;
-             4'b1100 : temp <= r2;
-        endcase
 /*        if (en_out)
             dout <= temp;
         else
             dout <= 16'hzzzz;  */   
     end
-    always@(posedge en_out)
-        dout <= temp;
+    
+    always @(posedge en_out)begin
+             case (temp_sel)                // blocking statement to use the new temp_sel value
+             4'b0001 : dout <= str_pointer;  
+             4'b0010 : dout <= pc;  
+             4'b0011 : dout <= ir;  
+             4'b0100 : dout <= mar;
+             4'b0101 : dout <= mdr;
+             4'b0110 : dout <= pr1;
+             4'b0111 : dout <= pr2;
+             4'b1000 : dout <= pr3;
+             4'b1001 : dout <= col;
+             4'b1010 : dout <= row;
+             4'b1011 : dout <= r1;
+             4'b1100 : dout <= r2;
+             default:dout <= 16'h0000;
+        endcase
+    end
+    //always@(posedge en_out)
+        //dout <= temp;
     //always@(negedge en_out)
        // dout <= 16'hzzzz;    
 endmodule  
