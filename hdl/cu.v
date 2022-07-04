@@ -145,7 +145,7 @@ always@(posedge clk)
                  imem_read <=0;
                  en_decAout <= 1;
                  en_decCout <= 1;
-                 //pc_inc <= 1;
+                 alu_ctrl <= 4'b0000;
                  state <= state + 1;
                  end
              'h08:begin
@@ -324,23 +324,34 @@ always@(posedge clk)
                  //jump <= 1;
                  en_decAout <=1;
                  en_decBout <=1;
+                 imem_read  <=0;
                  alu_ctrl <= 4'b0010;
                  state <= state + 1;
                  end
+                 
              'h22:begin 
                   jump <=1;
+                  pc_inc <=1;
                   state <= state + 1;             
                   end               
              'h23:begin
+                  en_decAout <=0;
+                  en_decBout <=0;
+                  imem_read <= 1;
+                  state <= state+1;
+                  end
+             'h24:begin
                   state <= 1;
                   jump <=0;
+                  imem_read <=0;
                   end
+             
              ///////////////////////////
              //MAR INCREMENT
-             'h24:begin
-                 mar_inc <=1;
-                 state <= state + 1;
-                 end
+             //'h24:begin
+             //    mar_inc <=1;
+             //    state <= state + 1;
+             //    end
              'h25:begin
                  mar_inc <= 0;
                  state <= 1;

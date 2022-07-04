@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="543.450 ns"></ZoomStartTime>
-      <ZoomEndTime time="899.451 ns"></ZoomEndTime>
-      <Cursor1Time time="518.450 ns"></Cursor1Time>
+      <ZoomStartTime time="814.744 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,421.745 ns"></ZoomEndTime>
+      <Cursor1Time time="1,280.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="250"></NameColumnWidth>
-      <ValueColumnWidth column_width="69"></ValueColumnWidth>
+      <NameColumnWidth column_width="245"></NameColumnWidth>
+      <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="164" />
    <wvobject type="divider" fp_name="divider82">
@@ -301,6 +301,7 @@
    <wvobject fp_name="/processor_tb/PC/imem_addr" type="array">
       <obj_property name="ElementShortName">imem_addr[15:0]</obj_property>
       <obj_property name="ObjectShortName">imem_addr[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor_tb/cu/BUS_WIDTH" type="array">
       <obj_property name="ElementShortName">BUS_WIDTH[31:0]</obj_property>
@@ -437,17 +438,17 @@
    <wvobject fp_name="/processor_tb/a_bus" type="array">
       <obj_property name="ElementShortName">a_bus[15:0]</obj_property>
       <obj_property name="ObjectShortName">a_bus[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor_tb/b_bus" type="array">
       <obj_property name="ElementShortName">b_bus[15:0]</obj_property>
       <obj_property name="ObjectShortName">b_bus[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor_tb/c_bus" type="array">
       <obj_property name="ElementShortName">c_bus[15:0]</obj_property>
       <obj_property name="ObjectShortName">c_bus[15:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject type="divider" fp_name="divider118">
       <obj_property name="label">PR1</obj_property>
@@ -636,8 +637,8 @@
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
    <wvobject fp_name="/processor_tb/iram" type="array">
-      <obj_property name="ElementShortName">iram[5:0][15:0]</obj_property>
-      <obj_property name="ObjectShortName">iram[5:0][15:0]</obj_property>
+      <obj_property name="ElementShortName">iram[10:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">iram[10:0][15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/processor_tb/IMEM/din" type="array">
       <obj_property name="ElementShortName">din[15:0]</obj_property>
@@ -648,8 +649,8 @@
       <obj_property name="ObjectShortName">addr[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/processor_tb/IMEM/ram" type="array">
-      <obj_property name="ElementShortName">ram[5:0][15:0]</obj_property>
-      <obj_property name="ObjectShortName">ram[5:0][15:0]</obj_property>
+      <obj_property name="ElementShortName">ram[10:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">ram[10:0][15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/processor_tb/IMEM/we" type="logic">
       <obj_property name="ElementShortName">we</obj_property>

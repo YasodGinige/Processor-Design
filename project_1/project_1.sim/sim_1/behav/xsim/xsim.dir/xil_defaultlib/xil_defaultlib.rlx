@@ -6,7 +6,7 @@ C:/Users/menuw/Documents/Processor-Design/hdl/Decoder.v,1656922825,verilog,,C:/U
 C:/Users/menuw/Documents/Processor-Design/hdl/MDR_Mux.v,1656756139,verilog,,C:/Users/menuw/Documents/Processor-Design/hdl/Decoder.v,,MDR_Mux,,,,,,,,
 C:/Users/menuw/Documents/Processor-Design/hdl/R1.v,1656781907,verilog,,C:/Users/menuw/Documents/Processor-Design/hdl/alu_16bit.v,,generic_reg,,,,,,,,
 C:/Users/menuw/Documents/Processor-Design/hdl/alu_16bit.v,1656922072,verilog,,C:/Users/menuw/Documents/Processor-Design/hdl/cu.v,,alu_16bit,,,,,,,,
-C:/Users/menuw/Documents/Processor-Design/hdl/cu.v,1656926083,verilog,,C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sources_1/imports/hdl/imem_ram.v,,cu,,,,,,,,
+C:/Users/menuw/Documents/Processor-Design/hdl/cu.v,1656935739,verilog,,C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sources_1/imports/hdl/imem_ram.v,,cu,,,,,,,,
 C:/Users/menuw/Documents/Processor-Design/hdl/data_ram.v,1656776006,verilog,,C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sources_1/imports/hdl/imem_ram.v,,data_ram,,,,,,,,
 C:/Users/menuw/Documents/Processor-Design/hdl/ir_module.v,1656926263,verilog,,C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sources_1/new/program_counter.v,,ir_module,,,,,,,,
 C:/Users/menuw/Documents/Processor-Design/hdl/pc_module.v,1656739415,verilog,,C:/Users/menuw/Documents/Processor-Design/hdl/ir_module.v,,PC,,,,,,,,
