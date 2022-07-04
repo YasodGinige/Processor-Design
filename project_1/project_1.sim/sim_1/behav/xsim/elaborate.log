@@ -15,7 +15,7 @@ Compiling module xil_defaultlib.cu
 Compiling module xil_defaultlib.alu_16bit
 Compiling module xil_defaultlib.Decoder
 Compiling module xil_defaultlib.mux
-Compiling module xil_defaultlib.imem_ram(DEPTH=21)
+Compiling module xil_defaultlib.imem_ram(DEPTH=28)
 Compiling module xil_defaultlib.data_ram(DWIDTH=8,DEPTH=49)
 Compiling module xil_defaultlib.MDR_Mux
 Compiling module xil_defaultlib.generic_reg
