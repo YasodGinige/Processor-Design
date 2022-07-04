@@ -53,7 +53,7 @@ assign addrC = IR[3:0];
 				IR = din;
 				A = IR;
                 B = IR;
-                $display("IR=%h",IR);
+                //$display("IR=%h",IR);
 			end
 			                //din is from instruction memory, if not in reset the    
 	
