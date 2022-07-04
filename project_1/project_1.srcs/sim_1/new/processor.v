@@ -23,8 +23,8 @@
 module processor_tb(
     );
 
-parameter LEN_IRAM = 29;
-parameter LEN_DRAM = 49;
+parameter LEN_IRAM = 60;
+parameter LEN_DRAM = 99;
 reg clk;
 
 wire [15:0] c_bus;
@@ -411,7 +411,7 @@ assign dmem_wen = (~dload_done) ? dmem_wen_reg : dmem_write;
 initial begin
     enable = 0;
     $readmemh("imem.mem",iram); // read file from INFILE
-    $readmemh("dmem_test.mem",dram);
+    $readmemh("dmem.mem",dram);
     imem_wen_reg = 1;       
     imem_addr_reg = -1;
     dmem_addr_reg = -1;
@@ -446,4 +446,11 @@ always@(posedge clk)begin
             dmem_wen_reg = 16'h0000;
         end
     end
+
+always@(posedge clk)begin
+    if(clock_en == 0)begin
+        $writememh("output.mem",dram,0,99);
+    end
+end
+
 endmodule

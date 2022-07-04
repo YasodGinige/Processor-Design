@@ -51,6 +51,7 @@ end
  
 always@(posedge clk)
     if (enable)  begin 
+        clock_en <=1;
     //begin
         case(state)
               // START
@@ -386,6 +387,7 @@ always@(posedge clk)
                  state <= 1;
              end
             
+            //END
             'h2b:begin
                 clock_en <=0;
             end
