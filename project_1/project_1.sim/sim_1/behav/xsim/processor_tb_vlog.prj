@@ -1,10 +1,12 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
+"../../../../project_1.srcs/sources_1/new/COL.v" \
 "../../../../../hdl/Decoder.v" \
 "../../../../project_1.srcs/sources_1/new/MAR.v" \
 "../../../../../hdl/MDR_Mux.v" \
 "../../../../project_1.srcs/sources_1/imports/hdl/Mux.v" \
 "../../../../../hdl/R1.v" \
+"../../../../project_1.srcs/sources_1/new/ROW.v" \
 "../../../../../hdl/alu_16bit.v" \
 "../../../../../hdl/cu.v" \
 "../../../../../hdl/data_ram.v" \

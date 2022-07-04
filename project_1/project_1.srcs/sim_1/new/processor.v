@@ -23,8 +23,8 @@
 module processor_tb(
     );
 
-parameter LEN_IRAM = 13;
-parameter LEN_DRAM = 14;
+parameter LEN_IRAM = 21;
+parameter LEN_DRAM = 49;
 reg clk;
 
 wire [15:0] c_bus;
@@ -69,6 +69,10 @@ wire pr2_wen;
 wire pr3_wen;
 wire mar_wen;
 wire mdr_wen;
+wire col_wen;
+wire row_wen;
+wire r1_wen;
+wire r2_wen;
 
 //A BUS CONNECTIONS
 wire [15:0] str_A;
@@ -161,11 +165,11 @@ Decoder dec_C(
     .mdr(mdr_wen),
     .pr1(pr1_wen ),
     .pr2(pr2_wen ),
-    .pr3(pr3_wen )
-    // col,
-    // row,
-    // r1,
-    // r2
+    .pr3(pr3_wen ),
+    .col(col_wen),
+    .row(row_wen),
+    .r1(r1_wen),
+    .r2(r2_wen)
     );
 
 //MUX A INSTANTIATION
@@ -304,12 +308,50 @@ generic_reg PR2(
         .B(pr2_B)
 );
 
+//PR3 INSTANTIATION
 generic_reg PR3(
         .clk(clk),
         .writeC(pr3_wen),
         .D(c_bus),
         .A(pr3_A),
         .B(pr3_B)
+);
+
+//COL INSTANTIATION
+COL COL(.clk(clk), 
+        .rst(reset),
+        .writeC(col_wen),
+        .D(c_bus),
+        .inc(col_inc),
+        .zero(col_zero),
+        .A(col_A),
+        .B(col_B));
+
+//ROW INSTANTIATION
+ROW ROW(.clk(clk), 
+        .rst(reset),
+        .writeC(row_wen),
+        .D(c_bus),
+        .inc(row_inc),
+        .A(row_A),
+        .B(row_B));
+        
+//R1 INSTANTIATION
+generic_reg R1(
+        .clk(clk),
+        .writeC(r1_wen),
+        .D(c_bus),
+        .A(r1_A),
+        .B(r1_B)
+);
+
+//R2 INSTANTIATION
+generic_reg R2(
+        .clk(clk),
+        .writeC(r2_wen),
+        .D(c_bus),
+        .A(r2_A),
+        .B(r2_B)
 );
 
 //CLOCK GENERATION
