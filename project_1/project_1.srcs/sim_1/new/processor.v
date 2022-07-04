@@ -23,6 +23,7 @@
 module processor_tb(
     );
 
+parameter LEN_IRAM = 10;
 reg clk;
 
 wire [15:0] c_bus;
@@ -52,7 +53,7 @@ wire [15:0] irtocu;
 //
 reg [15:0] ir;
 reg enable;
-reg [15:0] iram [5:0];
+reg [15:0] iram [LEN_IRAM:0];
 //INSTRUCTION REGISTER CONNECTIONS
 wire [3:0]addrA;
 wire [3:0]addrB;
@@ -330,7 +331,7 @@ always@(posedge clk)begin
         imem_addr_reg = imem_addr_reg +1;
         imem_din_reg = iram[imem_addr_reg];
         end
-        if (imem_addr_reg == 6)begin
+        if (imem_addr_reg == LEN_IRAM+1)begin        //array length counted from 1
             iload_done = 1;
             enable = 1;
             imem_addr_reg = 16'hzzzz;

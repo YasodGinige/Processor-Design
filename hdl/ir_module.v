@@ -46,11 +46,8 @@ assign addrC = IR[3:0];
 
 //Rest of the logic accomodates for reading immediate data
 	
-	always @(posedge clk)
-    begin
-    	if (rst == 1)
-    		IR <= 16'b0;
-    end
+	always @(posedge rst)
+        IR <= 16'b0;
     	
     always@(posedge write_en) begin       //write at the posedge of write_en?
 				IR = din;

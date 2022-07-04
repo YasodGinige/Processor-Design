@@ -85,6 +85,7 @@ always@(posedge clk)
 //                en_decCout <=1;
 //                state <= state +1;
                     reset <=0;
+                    pc_inc <=0;
                     imem_read <=1;
                     state <= state +1;
                 end 	

@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="32.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="999.001 ns"></ZoomEndTime>
-      <Cursor1Time time="280.000 ns"></Cursor1Time>
+      <ZoomStartTime time="543.450 ns"></ZoomStartTime>
+      <ZoomEndTime time="899.451 ns"></ZoomEndTime>
+      <Cursor1Time time="518.450 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="250"></NameColumnWidth>
-      <ValueColumnWidth column_width="73"></ValueColumnWidth>
+      <ValueColumnWidth column_width="69"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="163" />
+   <WVObjectSize size="164" />
    <wvobject type="divider" fp_name="divider82">
       <obj_property name="label">MUX_A</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -297,6 +297,10 @@
    <wvobject fp_name="/processor_tb/cu/ir" type="array">
       <obj_property name="ElementShortName">ir[15:0]</obj_property>
       <obj_property name="ObjectShortName">ir[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/processor_tb/PC/imem_addr" type="array">
+      <obj_property name="ElementShortName">imem_addr[15:0]</obj_property>
+      <obj_property name="ObjectShortName">imem_addr[15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/processor_tb/cu/BUS_WIDTH" type="array">
       <obj_property name="ElementShortName">BUS_WIDTH[31:0]</obj_property>
