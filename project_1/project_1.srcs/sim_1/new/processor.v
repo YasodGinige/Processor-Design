@@ -23,7 +23,7 @@
 module processor_tb(
     );
 
-parameter LEN_IRAM = 28;
+parameter LEN_IRAM = 29;
 parameter LEN_DRAM = 49;
 reg clk;
 
