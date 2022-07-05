@@ -390,6 +390,7 @@ always@(posedge clk)
             //END
             'h2b:begin
                 clock_en <=0;
+                dmem_write <=16'hzzzz;
             end
              
              //////////////////////////
@@ -397,4 +398,3 @@ always@(posedge clk)
     //end
 end	
 endmodule
-    

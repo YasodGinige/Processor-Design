@@ -30,9 +30,9 @@ module data_ram #(parameter DWIDTH = 16, parameter ADDR_WIDTH= 16, parameter DEP
 // parameter DEPTH = 1<< ADDR_WIDTH; 
  reg [7:0] ram [DEPTH:0];
  //reg [ADDR_WIDTH:0] addr_reg;
-  initial begin
-    $readmemh("dmem.mem",ram,0,6); // read file from INFILE
-end
+//  initial begin
+//    $readmemh("dmem.mem",ram,0,6); // read file from INFILE
+//end
 
  always @ (posedge clk)
  begin
