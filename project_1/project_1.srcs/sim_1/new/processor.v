@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+`timescale 1ns / 10ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -23,7 +23,7 @@
 module processor_tb(
     );
 
-parameter LEN_IRAM = 30;
+parameter LEN_IRAM = 67;
 parameter LEN_DRAM = 65534;
 reg clk;
 
@@ -113,7 +113,7 @@ wire imem_wen;
 wire [15:0] dmem_addr;
 wire [15:0] dmem_dout;
 wire [15:0] dmem_din;
-wire [15:0] dmem_wen;
+wire dmem_wen; ///set to 1 bit
 wire [15:0] imem_addr_pc;
 wire [15:0] mdr_din;
 
@@ -358,7 +358,7 @@ generic_reg R2(
 initial begin
     clk = 1; 
     forever begin
-        #10 clk = ~clk;
+        #5 clk = ~clk;
         end 
     end
     
@@ -379,12 +379,13 @@ reg dload_done = 0;
 //assign c_bus = c_bus_reg;
 //assign pr1_wen = pr1_wen_reg;
 //assign pr2_wen = pr2_wen_reg;
+assign clock_en = (enable) ? 1'bz:0;
 assign imem_addr = (~iload_done) ? imem_addr_reg:imem_addr_pc;
 assign imem_din = imem_din_reg;
 //assign imem_wen = (~iload_done) ? imem_wen_reg:(~imem_read);
 assign imem_wen = imem_wen_reg;
 
-assign dmem_addr = (~dload_done) ? dmem_addr_reg:mar_A;
+assign dmem_addr = (~(dload_done &&clock_en)) ? dmem_addr_reg:mar_A;
 assign dmem_din = (~dload_done) ? dmem_din_reg : mdr_A;
 assign dmem_wen = (~dload_done) ? dmem_wen_reg : dmem_write;
 
@@ -408,9 +409,13 @@ assign dmem_wen = (~dload_done) ? dmem_wen_reg : dmem_write;
 //    #100
 //    ir = 16'h1000;
 //end
+integer i=-1;
+integer f;
 initial begin
     enable = 0;
-    $readmemh("imem_test.mem",iram); // read file from INFILE
+    f = $fopen("final2.txt","w");
+    //f1 = $fopen("output2.txt","w");
+    $readmemh("imem.mem",iram); // read file from INFILE
     $readmemh("dmem.mem",dram);
     imem_wen_reg = 1;       
     imem_addr_reg = -1;
@@ -443,14 +448,32 @@ always@(posedge clk)begin
             enable = 1;
             dmem_addr_reg = 16'hzzzz;
             dmem_din_reg = 16'hzzzz;
-            dmem_wen_reg = 16'h0000;
+            dmem_wen_reg = 16'hzzzz;
         end
     end
 
-initial begin
-        #10000000    
+
+/*
+always@(posedge clk)begin
+    if(clock_en == 0)begin
+        for(i = 0; i)
         $writememh("output.mem",dram);
         $stop;
+    end
 end
-
+*/
+always@(posedge clk)begin
+      if ( clock_en  == 0 )begin
+        //for (i = 0; i<16129; i=i+1) begin
+          //$display("OUT %b", dram[i]);
+          i <= i+1;
+          dmem_addr_reg <= i[15:0];
+          $fwrite(f,"%h\n",dmem_dout[7:0] ); //NOT DRAM < DMEM
+          //end
+      end
+      if(i == 16140)begin
+        $fclose(f);
+        $finish;
+      end
+end
 endmodule

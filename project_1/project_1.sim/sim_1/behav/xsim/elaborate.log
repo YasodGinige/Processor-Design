@@ -5,7 +5,6 @@ Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 8 for port 'din' [C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sim_1/new/processor.v:229]
-WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 1 for port 'we' [C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sim_1/new/processor.v:230]
 WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 8 for port 'dout' [C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sim_1/new/processor.v:233]
 Completed static elaboration
 Starting simulation data flow analysis
@@ -15,7 +14,7 @@ Compiling module xil_defaultlib.cu
 Compiling module xil_defaultlib.alu_16bit
 Compiling module xil_defaultlib.Decoder
 Compiling module xil_defaultlib.mux
-Compiling module xil_defaultlib.imem_ram(DEPTH=65)
+Compiling module xil_defaultlib.imem_ram(DEPTH=67)
 Compiling module xil_defaultlib.data_ram(DWIDTH=8,DEPTH=65534)
 Compiling module xil_defaultlib.MDR_Mux
 Compiling module xil_defaultlib.generic_reg
