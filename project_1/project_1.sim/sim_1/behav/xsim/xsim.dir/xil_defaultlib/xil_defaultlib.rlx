@@ -10,7 +10,7 @@ C:/Users/menuw/Documents/Processor-Design/hdl/cu.v,1657101491,verilog,,C:/Users/
 C:/Users/menuw/Documents/Processor-Design/hdl/data_ram.v,1657101841,verilog,,C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sources_1/imports/hdl/imem_ram.v,,data_ram,,,,,,,,
 C:/Users/menuw/Documents/Processor-Design/hdl/ir_module.v,1656965351,verilog,,C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sources_1/new/program_counter.v,,ir_module,,,,,,,,
 C:/Users/menuw/Documents/Processor-Design/project_1/project_1.sim/sim_1/behav/xsim/glbl.v,1634335545,verilog,,,,glbl,,,,,,,,
-C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sim_1/new/processor.v,1657101455,verilog,,,,processor_tb,,,,,,,,
+C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sim_1/new/processor.v,1657116122,verilog,,,,processor_tb,,,,,,,,
 C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sources_1/imports/hdl/Mux.v,1656923296,verilog,,C:/Users/menuw/Documents/Processor-Design/hdl/R1.v,,mux,,,,,,,,
 C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sources_1/imports/hdl/imem_ram.v,1657097711,verilog,,C:/Users/menuw/Documents/Processor-Design/hdl/ir_module.v,,imem_ram,,,,,,,,
 C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sources_1/new/COL.v,1656705519,verilog,,C:/Users/menuw/Documents/Processor-Design/hdl/Decoder.v,,COL,,,,,,,,
