@@ -1,10 +1,10 @@
 Vivado Simulator v2021.2
 Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot processor_tb_behav xil_defaultlib.processor_tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot processor_tb_behav xil_defaultlib.processor_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 8 for port 'din' [C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sim_1/new/processor.v:231]
-WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 8 for port 'dout' [C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sim_1/new/processor.v:235]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 8 for port 'din' [C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sources_1/new/processor_combined.v:230]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 8 for port 'dout' [C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sources_1/new/processor_combined.v:234]
 Completed static elaboration
 INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

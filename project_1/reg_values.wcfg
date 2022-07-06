@@ -11,85 +11,80 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="56,329,602.916 ns"></ZoomStartTime>
-      <ZoomEndTime time="56,329,947.417 ns"></ZoomEndTime>
-      <Cursor1Time time="56,329,890.000 ns"></Cursor1Time>
+      <ZoomStartTime time="56,329,421.770 ns"></ZoomStartTime>
+      <ZoomEndTime time="56,329,875.647 ns"></ZoomEndTime>
+      <Cursor1Time time="56,329,800.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="249"></NameColumnWidth>
-      <ValueColumnWidth column_width="93"></ValueColumnWidth>
+      <ValueColumnWidth column_width="89"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
-   <wvobject fp_name="/processor_tb/R2/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/processor_tb/MDR/Register" type="array">
+   <WVObjectSize size="12" />
+   <wvobject fp_name="/processor_tb/downsampling_processor/MDR/Register" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">Register[15:0]</obj_property>
       <obj_property name="ObjectShortName">Register[15:0]</obj_property>
-      <obj_property name="label">MDR_DATA</obj_property>
+      <obj_property name="label">MDR</obj_property>
    </wvobject>
-   <wvobject fp_name="/processor_tb/MAR/Register" type="array">
+   <wvobject fp_name="/processor_tb/downsampling_processor/MAR/Register" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">Register[15:0]</obj_property>
       <obj_property name="ObjectShortName">Register[15:0]</obj_property>
-      <obj_property name="label">MAR_DATA</obj_property>
+      <obj_property name="label">MAR</obj_property>
    </wvobject>
-   <wvobject fp_name="/processor_tb/I_REG/IR" type="array">
+   <wvobject fp_name="/processor_tb/downsampling_processor/I_REG/IR" type="array">
       <obj_property name="ElementShortName">IR[15:0]</obj_property>
       <obj_property name="ObjectShortName">IR[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/processor_tb/str_pointer/Register" type="array">
+   <wvobject fp_name="/processor_tb/downsampling_processor/str_pointer/Register" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">Register[15:0]</obj_property>
       <obj_property name="ObjectShortName">Register[15:0]</obj_property>
-      <obj_property name="label">STR_POINTER</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="label">STR POINTER</obj_property>
    </wvobject>
-   <wvobject fp_name="/processor_tb/PC/imem_addr" type="array">
+   <wvobject fp_name="/processor_tb/downsampling_processor/PC/imem_addr" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">imem_addr[15:0]</obj_property>
       <obj_property name="ObjectShortName">imem_addr[15:0]</obj_property>
-      <obj_property name="label">imem_addr/PC</obj_property>
+      <obj_property name="label">PC/ IMEM ADDR</obj_property>
    </wvobject>
-   <wvobject fp_name="/processor_tb/PR1/Register" type="array">
+   <wvobject fp_name="/processor_tb/downsampling_processor/PR1/Register" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">Register[15:0]</obj_property>
       <obj_property name="ObjectShortName">Register[15:0]</obj_property>
       <obj_property name="label">PR1</obj_property>
    </wvobject>
-   <wvobject fp_name="/processor_tb/PR2/Register" type="array">
+   <wvobject fp_name="/processor_tb/downsampling_processor/PR2/Register" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">Register[15:0]</obj_property>
       <obj_property name="ObjectShortName">Register[15:0]</obj_property>
       <obj_property name="label">PR2</obj_property>
    </wvobject>
-   <wvobject fp_name="/processor_tb/PR3/Register" type="array">
+   <wvobject fp_name="/processor_tb/downsampling_processor/PR3/Register" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">Register[15:0]</obj_property>
       <obj_property name="ObjectShortName">Register[15:0]</obj_property>
       <obj_property name="label">PR3</obj_property>
    </wvobject>
-   <wvobject fp_name="/processor_tb/COL/Register" type="array">
+   <wvobject fp_name="/processor_tb/downsampling_processor/COL/Register" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">Register[15:0]</obj_property>
       <obj_property name="ObjectShortName">Register[15:0]</obj_property>
       <obj_property name="label">COL</obj_property>
    </wvobject>
-   <wvobject fp_name="/processor_tb/ROW/Register" type="array">
+   <wvobject fp_name="/processor_tb/downsampling_processor/ROW/Register" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">Register[15:0]</obj_property>
       <obj_property name="ObjectShortName">Register[15:0]</obj_property>
       <obj_property name="label">ROW</obj_property>
    </wvobject>
-   <wvobject fp_name="/processor_tb/R1/Register" type="array">
+   <wvobject fp_name="/processor_tb/downsampling_processor/R1/Register" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">Register[15:0]</obj_property>
       <obj_property name="ObjectShortName">Register[15:0]</obj_property>
       <obj_property name="label">R1</obj_property>
    </wvobject>
-   <wvobject fp_name="/processor_tb/R2/Register" type="array">
+   <wvobject fp_name="/processor_tb/downsampling_processor/R2/Register" type="array">
       <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">Register[15:0]</obj_property>
       <obj_property name="ObjectShortName">Register[15:0]</obj_property>
