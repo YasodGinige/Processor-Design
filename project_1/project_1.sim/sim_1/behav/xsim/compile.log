@@ -32,3 +32,6 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/menuw/Documents/Processor-
 INFO: [VRFC 10-311] analyzing module program_counter
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sim_1/new/processor.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module processor_tb
+WARNING: [VRFC 10-159] /* in comment [C:/Users/menuw/Documents/Processor-Design/project_1/project_1.srcs/sim_1/new/processor.v:453]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/menuw/Documents/Processor-Design/project_1/project_1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

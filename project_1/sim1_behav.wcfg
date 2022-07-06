@@ -11,12 +11,12 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="613.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,360.001 ns"></ZoomEndTime>
-      <Cursor1Time time="1,226.000 ns"></Cursor1Time>
+      <ZoomStartTime time="615.400 ns"></ZoomStartTime>
+      <ZoomEndTime time="813.601 ns"></ZoomEndTime>
+      <Cursor1Time time="690.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="245"></NameColumnWidth>
+      <NameColumnWidth column_width="241"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="164" />
@@ -637,8 +637,8 @@
       <obj_property name="DisplayName">label</obj_property>
    </wvobject>
    <wvobject fp_name="/processor_tb/iram" type="array">
-      <obj_property name="ElementShortName">iram[10:0][15:0]</obj_property>
-      <obj_property name="ObjectShortName">iram[10:0][15:0]</obj_property>
+      <obj_property name="ElementShortName">iram[67:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">iram[67:0][15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/processor_tb/IMEM/din" type="array">
       <obj_property name="ElementShortName">din[15:0]</obj_property>
@@ -647,10 +647,11 @@
    <wvobject fp_name="/processor_tb/IMEM/addr" type="array">
       <obj_property name="ElementShortName">addr[15:0]</obj_property>
       <obj_property name="ObjectShortName">addr[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor_tb/IMEM/ram" type="array">
-      <obj_property name="ElementShortName">ram[10:0][15:0]</obj_property>
-      <obj_property name="ObjectShortName">ram[10:0][15:0]</obj_property>
+      <obj_property name="ElementShortName">ram[67:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">ram[67:0][15:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/processor_tb/IMEM/we" type="logic">
       <obj_property name="ElementShortName">we</obj_property>

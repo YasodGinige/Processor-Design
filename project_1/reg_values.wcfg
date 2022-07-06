@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="2,218.200 ns"></ZoomStartTime>
-      <ZoomEndTime time="3,043.018 ns"></ZoomEndTime>
-      <Cursor1Time time="2,760.000 ns"></Cursor1Time>
+      <ZoomStartTime time="56,329,602.916 ns"></ZoomStartTime>
+      <ZoomEndTime time="56,329,947.417 ns"></ZoomEndTime>
+      <Cursor1Time time="56,329,890.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="249"></NameColumnWidth>
-      <ValueColumnWidth column_width="105"></ValueColumnWidth>
+      <ValueColumnWidth column_width="93"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="13" />
    <wvobject fp_name="/processor_tb/R2/clk" type="logic">
@@ -45,6 +45,7 @@
       <obj_property name="ElementShortName">Register[15:0]</obj_property>
       <obj_property name="ObjectShortName">Register[15:0]</obj_property>
       <obj_property name="label">STR_POINTER</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor_tb/PC/imem_addr" type="array">
       <obj_property name="DisplayName">label</obj_property>

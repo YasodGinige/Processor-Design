@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+$finish called at time : 56329800 ns : File "C:/Users/menuw/Documents/Processor-Design/hdl/data_ram.v" Line 51
+INFO: xsimkernel Simulation Memory Usage: 16904 KB (Peak: 16904 KB), Simulation CPU Usage: 41014 ms

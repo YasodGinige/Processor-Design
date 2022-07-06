@@ -23,7 +23,8 @@ module cu #(parameter BUS_WIDTH =16,
 	output reg col_inc,
 	output reg row_inc,
 	output reg jump,
-	output reg clock_en
+	output reg clock_en,
+	output reg done
 );
 reg [OPCODE_LEN-1:0] opcode;
 reg [ADDR_AW-1:0] addr_A;
@@ -74,6 +75,7 @@ always@(posedge clk)
                 col_inc <= 0;
                 row_inc <= 0;
                 jump <= 0;
+                done <= 0;
                 end
             
             // FETCH	
@@ -391,6 +393,7 @@ always@(posedge clk)
             'h2b:begin
                 clock_en <=0;
                 dmem_write <=16'hzzzz;
+                done <= 1;
             end
              
              //////////////////////////

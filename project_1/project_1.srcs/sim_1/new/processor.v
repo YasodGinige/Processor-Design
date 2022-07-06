@@ -1,4 +1,4 @@
-`timescale 1ns / 10ps
+`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -24,7 +24,7 @@ module processor_tb(
     );
 
 parameter LEN_IRAM = 67;
-parameter LEN_DRAM = 65534;
+parameter LEN_DRAM = 65535;
 reg clk;
 
 wire [15:0] c_bus;
@@ -51,6 +51,7 @@ wire en_decBop;
 wire en_decAop;
 wire reset;
 wire [15:0] irtocu;
+wire done;
 //
 reg [15:0] ir;
 reg enable;
@@ -139,7 +140,8 @@ cu cu(
     .reset(reset),
     .ir(irtocu),
     .clk(clk),
-    .enable(enable)  
+    .enable(enable),
+    .done(done)  
 );
 
 //ALU INSTANTIATION
@@ -230,7 +232,8 @@ data_ram #(.DWIDTH(8), .ADDR_WIDTH(16), .DEPTH(LEN_DRAM))DMEM(
             .we(dmem_wen),
             .addr(dmem_addr ),
             .clk(clk),
-            .dout(dmem_dout)
+            .dout(dmem_dout),
+            .done(done)
 );
 
 MDR_Mux mdr_mux( 
@@ -380,14 +383,20 @@ reg dload_done = 0;
 //assign pr1_wen = pr1_wen_reg;
 //assign pr2_wen = pr2_wen_reg;
 assign clock_en = (enable) ? 1'bz:0;
-assign imem_addr = (~iload_done) ? imem_addr_reg:imem_addr_pc;
-assign imem_din = imem_din_reg;
+//assign imem_addr = (~iload_done) ? imem_addr_reg:imem_addr_pc;
+//assign imem_din = imem_din_reg;
 //assign imem_wen = (~iload_done) ? imem_wen_reg:(~imem_read);
-assign imem_wen = imem_wen_reg;
+//assign imem_wen = imem_wen_reg;
+assign imem_addr = imem_addr_pc;
+assign imem_din = imem_din_reg;
+assign imem_wen = 0;
 
-assign dmem_addr = (~(dload_done &&clock_en)) ? dmem_addr_reg:mar_A;
-assign dmem_din = (~dload_done) ? dmem_din_reg : mdr_A;
-assign dmem_wen = (~dload_done) ? dmem_wen_reg : dmem_write;
+//assign dmem_addr = (~(dload_done &&clock_en)) ? dmem_addr_reg:mar_A;
+//assign dmem_din = (~dload_done) ? dmem_din_reg : mdr_A;
+//assign dmem_wen = (~dload_done) ? dmem_wen_reg : dmem_write;
+assign dmem_addr = mar_A;
+assign dmem_din = mdr_A;
+assign dmem_wen = dmem_write;
 
 //assign enable = dload_done && iload_done;
 //assign imem_addr_pc = (iload_done)? imem_addr: 16'hzzzz;
@@ -409,71 +418,69 @@ assign dmem_wen = (~dload_done) ? dmem_wen_reg : dmem_write;
 //    #100
 //    ir = 16'h1000;
 //end
-integer i=-1;
+reg [15:0]index;
 integer f;
 initial begin
     enable = 0;
-    f = $fopen("final2.txt","w");
+    f = $fopen("C:\\Users\\menuw\\Documents\\Processor-Design\\output.txt","w");
     //f1 = $fopen("output2.txt","w");
     $readmemh("imem.mem",iram); // read file from INFILE
-    $readmemh("dmem.mem",dram);
+    $readmemh("dmem_test.mem",dram);
     imem_wen_reg = 1;       
-    imem_addr_reg = -1;
-    dmem_addr_reg = -1;
+    imem_addr_reg = 0;
+    dmem_addr_reg = 0;
     dmem_wen_reg = 1;
+    index = -1;
+    #20;
+    enable =1;
 end
 
-
+/*
+//LOADING IMEM DATA
 always@(posedge clk)begin
     if(~iload_done)begin
-        imem_addr_reg = imem_addr_reg +1;
-        imem_din_reg = iram[imem_addr_reg];
+        imem_addr_reg <= imem_addr_reg +1;
+        imem_din_reg <= iram[imem_addr_reg];
         end
         if (imem_addr_reg == LEN_IRAM+1)begin        //array length counted from 1
             iload_done = 1;
 //            enable = 1;
-            imem_addr_reg = 16'hzzzz;
-            imem_din_reg = 16'hzzzz;
-            imem_wen_reg = 16'h0000;
+            imem_addr_reg <= 16'hzzzz;
+            imem_din_reg <= 16'hzzzz;
+            imem_wen_reg <= 16'h0000;
             end
     end
-
+/*
+//LOADIND DMEM DATA
 always@(posedge clk)begin
     if(~dload_done)begin
-        dmem_addr_reg = dmem_addr_reg +1;
-        dmem_din_reg = dram[dmem_addr_reg];
+        dmem_addr_reg <= dmem_addr_reg +1;
+        dmem_din_reg <= dram[dmem_addr_reg];
         end
         if(dmem_addr_reg == LEN_DRAM+1)begin
-            dload_done = 1;
-            enable = 1;
-            dmem_addr_reg = 16'hzzzz;
-            dmem_din_reg = 16'hzzzz;
-            dmem_wen_reg = 16'hzzzz;
+            dload_done <= 1;
+            enable <= 1;
+            dmem_addr_reg <= 16'hzzzz;
+            dmem_din_reg <= 16'hzzzz;
+            dmem_wen_reg <= 16'hzzzz;
         end
     end
-
-
-/*
-always@(posedge clk)begin
-    if(clock_en == 0)begin
-        for(i = 0; i)
-        $writememh("output.mem",dram);
-        $stop;
-    end
-end
 */
+//WRITING TO A FILE
+/*
 always@(posedge clk)begin
       if ( clock_en  == 0 )begin
         //for (i = 0; i<16129; i=i+1) begin
           //$display("OUT %b", dram[i]);
-          i <= i+1;
-          dmem_addr_reg <= i[15:0];
+          index <= index+1;
+          dmem_addr_reg <= index;
           $fwrite(f,"%h\n",dmem_dout[7:0] ); //NOT DRAM < DMEM
           //end
       end
-      if(i == 16140)begin
+      if(index == 16129)begin
         $fclose(f);
         $finish;
       end
 end
+*/
 endmodule

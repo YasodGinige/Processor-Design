@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="628.333 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,074.334 ns"></ZoomEndTime>
-      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
+      <ZoomStartTime time="999,690.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,000,007.054 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="249"></NameColumnWidth>
-      <ValueColumnWidth column_width="117"></ValueColumnWidth>
+      <ValueColumnWidth column_width="109"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="11" />
    <wvobject fp_name="/processor_tb/dmem_addr_reg" type="array">
       <obj_property name="ElementShortName">dmem_addr_reg[15:0]</obj_property>
       <obj_property name="ObjectShortName">dmem_addr_reg[15:0]</obj_property>
@@ -40,6 +40,7 @@
    <wvobject fp_name="/processor_tb/DMEM/din" type="array">
       <obj_property name="ElementShortName">din[7:0]</obj_property>
       <obj_property name="ObjectShortName">din[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/processor_tb/DMEM/addr" type="array">
       <obj_property name="ElementShortName">addr[15:0]</obj_property>
@@ -65,13 +66,5 @@
    <wvobject fp_name="/processor_tb/DMEM/ADDR_WIDTH" type="array">
       <obj_property name="ElementShortName">ADDR_WIDTH[31:0]</obj_property>
       <obj_property name="ObjectShortName">ADDR_WIDTH[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/processor_tb/DMEM/ram" type="array">
-      <obj_property name="ElementShortName">ram[14:0][7:0]</obj_property>
-      <obj_property name="ObjectShortName">ram[14:0][7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/processor_tb/dram" type="array">
-      <obj_property name="ElementShortName">dram[14:0][7:0]</obj_property>
-      <obj_property name="ObjectShortName">dram[14:0][7:0]</obj_property>
    </wvobject>
 </wave_config>
