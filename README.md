@@ -27,5 +27,5 @@ A simple down sampling algorithm is used for this processor to avoid errors. Acc
 
 ![alt text](https://github.com/YasodGinige/Processor-Design/blob/main/Images/4.JPG?raw=true)
 
-Followong images show the practical application of this filter.
+Followong images show the practical application of this filter. For more details please refer the project report provided in the documentation directory.
 ![alt text](https://github.com/YasodGinige/Processor-Design/blob/main/Images/5.JPG?raw=true)
